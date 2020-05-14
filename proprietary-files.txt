@@ -1,2 +1,0 @@
-# Bluetooth
-vendor/firmware/brcm/BCM4345C0.hcd
