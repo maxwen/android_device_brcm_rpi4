@@ -1,0 +1,24 @@
+# Display
+#debug.drm.mode.force=1280x800
+#debug.hwui.use_partial_updates=0
+#hwc.drm.device=/dev/dri/card1
+#hwc.drm.use_overlay_planes=0
+persist.sys.ui.hw=disable
+#ro.hardware.gralloc=minigbm
+#ro.hardware.hwcomposer=drm_minigbm
+ro.opengles.version=131072
+ro.sf.lcd_density=160
+qemu.gles=2
+
+# GPS
+ro.kernel.android.gps=ttyACM0
+
+# Media
+persist.media.treble_omx=false
+
+# USB
+persist.sys.usb.config=mtp
+
+# Wifi
+wifi.interface=wlan0
+

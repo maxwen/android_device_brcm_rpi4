@@ -19,4 +19,10 @@
 DEVICE_PATH := device/brcm/rpi4
 
 # Kernel
+#TARGET_KERNEL_SOURCE := kernel/arpi
 TARGET_KERNEL_CONFIG := lineageos_rpi4_defconfig
+
+TARGET_BOARD_PLATFORM := bcm2711
+TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
+TARGET_INIT_VENDOR_LIB := libinit_rpi4
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
