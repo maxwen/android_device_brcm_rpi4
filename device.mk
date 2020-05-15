@@ -29,13 +29,12 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default
 
-# Display
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.allocator@2.0-impl \
-    android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.composer@2.1-impl \
-    android.hardware.graphics.composer@2.1-service \
-    android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service.rpi4 \
+    android.hardware.graphics.mapper@2.0-impl.rpi4 \
+    android.hardware.graphics.composer@2.1-service.rpi4
+
+PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service
 
@@ -44,14 +43,7 @@ PRODUCT_PACKAGES += \
     libGLES_mesa \
     libEGL_swiftshader \
     libGLESv1_CM_swiftshader \
-    libGLESv2_swiftshader \
-    gallium_dri
-
-# minigbm
-PRODUCT_PACKAGES += \
-    gralloc.minigbm \
-    libminigbm \
-    hwcomposer.drm_minigbm
+    libGLESv2_swiftshader
 
 # Keymaster HAL
 PRODUCT_PACKAGES += \
@@ -62,40 +54,10 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
     android.hardware.gatekeeper@1.0-service
 
-# Power
-#PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-impl \
-    android.hardware.power@1.0-service
-
-# Healthd
-#PRODUCT_PACKAGES += \
-    android.hardware.health@2.0-impl \
-    android.hardware.health@2.0-service
-
-# Configstore
-PRODUCT_PACKAGES += \
-    android.hardware.configstore@1.0-service
-
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service
-
-# gps
-#PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl \
-    android.hardware.gnss@1.0-service \
-    gps.default
-
-# Lights
-#PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-impl \
-    android.hardware.light@2.0-service
-
-# camera
-#PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -155,7 +117,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     audio.primary.rpi4 \
     memtrack.rpi4 \
-    gatekeeper.rpi4
+    gatekeeper.rpi4 \
+    gralloc.rpi4
 
 # TODO hwcomposer needs this for correct colors
 PRODUCT_PACKAGES += \
