@@ -1,0 +1,2 @@
+type v3d_sys_file, fs_type, sysfs_type;
+type mnc_sys_file, fs_type, sysfs_type;

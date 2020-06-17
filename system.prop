@@ -1,4 +1,5 @@
 # Display
+#debug.drm.mode.force=1280x800
 gralloc.drm.kms=/dev/dri/card0
 gralloc.drm.device=/dev/dri/card1
 ro.opengles.version=131072
