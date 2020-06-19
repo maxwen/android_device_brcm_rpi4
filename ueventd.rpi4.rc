@@ -9,3 +9,5 @@
 
 # GPS
 /dev/ttyACM0                                                                 0660   system     radio
+
+/dev/ion                  0664   system     system

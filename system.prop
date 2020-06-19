@@ -17,3 +17,11 @@ persist.sys.usb.config=mtp
 # Wifi
 wifi.interface=wlan0
 
+ro.omni.device_bpf_ready=1
+
+ro.apex.updatable=true
+
+
+ro.build.fingerprint=Raspberry/omni_rpi4/rpi4:10/QKQ1.190716.003/1910071200:userdebug/release-keys
+ro.product.build.fingerprint=Raspberry/omni_rpi4/rpi4:10/QKQ1.190716.003/1910071200:userdebug/release-keys
+ro.vendor.build.fingerprint=Raspberry/omni_rpi4/rpi4:10/QKQ1.190716.003/1910071200:userdebug/release-keys

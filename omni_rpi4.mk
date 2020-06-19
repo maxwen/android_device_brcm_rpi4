@@ -18,6 +18,9 @@
 DEVICE_PATH := device/brcm/rpi4
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+
+DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
+
 $(call inherit-product, vendor/omni/config/common_tablet.mk)
 $(call inherit-product, device/brcm/rpi4/device.mk)
 
@@ -25,8 +28,6 @@ PRODUCT_NO_CHARGER := true
 
 # Boot animation
 TARGET_BOOTANIMATION_SIZE := 1080p
-
-DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := rpi4

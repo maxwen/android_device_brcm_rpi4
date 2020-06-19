@@ -16,7 +16,7 @@
 
 DEVICE_PATH := device/brcm/rpi4
 
-$(call inherit-product, frameworks/native/build/tablet-7in-xhdpi-2048-dalvik-heap.mk)
+include frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := mdpi
@@ -40,7 +40,9 @@ PRODUCT_PACKAGES += \
 
 # egl
 PRODUCT_PACKAGES += \
-    libGLES_mesa \
+    libGLES_mesa
+
+#PRODUCT_PACKAGES += \
     libEGL_swiftshader \
     libGLESv1_CM_swiftshader \
     libGLESv2_swiftshader
@@ -58,6 +60,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service
+
+PRODUCT_PACKAGES += \
+    android.hardware.configstore@1.1-service \
+    vndservicemanager
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -84,13 +90,12 @@ PRODUCT_COPY_FILES += \
     hardware/broadcom/wlan/bcmdhd/config/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
 
 # USB HAL
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic
 
 # media configurations
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml \
-    $(DEVICE_PATH)/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml \
     $(DEVICE_PATH)/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
     $(DEVICE_PATH)/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
     frameworks/av/media/libeffects/data/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.conf \
@@ -105,10 +110,11 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
 
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/init.rpi4.rc:root/init.rpi4.rc \
-    $(DEVICE_PATH)/init.rpi4.usb.rc:root/init.rpi4.usb.rc \
+    $(DEVICE_PATH)/init.rpi4.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.rpi4.rc \
+    $(DEVICE_PATH)/init.rpi4.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.rpi4.usb.rc \
     $(DEVICE_PATH)/ueventd.rpi4.rc:root/ueventd.rpi4.rc \
-    $(DEVICE_PATH)/fstab.rpi4:root/fstab.rpi4
+    $(DEVICE_PATH)/fstab.rpi4:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.rpi4 \
+    $(DEVICE_PATH)/fstab.rpi4:$(TARGET_COPY_OUT_RAMDISK)/fstab.rpi4
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/Generic.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/Generic.kl
@@ -118,6 +124,17 @@ PRODUCT_PACKAGES += \
     memtrack.rpi4 \
     gatekeeper.rpi4 \
     gralloc.rpi4
+
+PRODUCT_PACKAGES += \
+    libinit_rpi4
+
+PRODUCT_PACKAGES += \
+    ims-ext-common \
+    ims_ext_common.xml \
+    qti-telephony-hidl-wrapper \
+    qti_telephony_hidl_wrapper.xml \
+    qti-telephony-utils \
+    qti_telephony_utils.xml
 
 # TODO hwcomposer needs this for correct colors
 PRODUCT_PACKAGES += \

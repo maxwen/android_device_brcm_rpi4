@@ -1,0 +1,14 @@
+cc_library_static {
+    name: "libinit_rpi4",
+
+    include_dirs: [
+        "system/core/base/include",
+        "system/core/init",
+    ],
+    cflags: [
+        "-Wall",
+    ],
+    srcs: ["init_rpi4.cpp"],
+    recovery_available: true,
+}
+

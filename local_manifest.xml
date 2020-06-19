@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <!-- Graphics -->
+    <remove-project name="platform/external/mesa3d" />
+    <remove-project name="android_frameworks_opt_net_wifi" />
+    <!--<remove-project name="android_packages_apps_Chromium" />
+    <project path="packages/apps/OmniChromium" name="android_packages_apps_OmniChromium" remote="gitlab" revision="android-9.0" /> -->
+
+    <project path="frameworks/opt/net/wifi" name="platform/frameworks/opt/net/wifi" groups="pdk" />
+
+    <remote name="arpi" fetch="https://github.com/android-rpi"/>
+    <project path="external/mesa3d" name="external_mesa3d" revision="v3d-20.1" remote="arpi"/>
+    <project path="external/drm_gralloc" name="external_drm_gralloc" revision="v3d-20.1" remote="arpi"/>
+    <project path="hardware/arpi" name="hardware_arpi" revision="arpi-10" remote="arpi"/>
+    <project path="kernel/arpi" name="kernel_arpi" revision="arpi-5.4.y" remote="arpi"/>
+
+   <remote  name="github-ssh"
+           fetch="ssh://git@github.com/" />
+
+    <project path="vendor/brcm" name="maxwen/proprietary_vendor_brcm" remote="github-ssh" revision="android-10"/>
+    <project path="device/brcm/rpi4" name="maxwen/android_device_brcm_rpi4" remote="github-ssh" revision="android-10"/>
+  <!--<remote  name="gitlab-root"
+           fetch="https://gitlab.com/" />
+
+  <project path="vendor/gapps" name="darkobas/android_vendor_gapps" remote="gitlab-root" revision="android-10" />-->
+  <project path="vendor/microg" name="android_prebuilts_prebuiltapks" remote="omnirom" revision="android-10" />
+</manifest>
