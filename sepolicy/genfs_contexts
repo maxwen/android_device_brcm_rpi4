@@ -1,2 +1,2 @@
-genfscon sysfs /devices/platform/v3dbus/fec00000.v3d/uevent u:object_r:v3d_sys_file:s0
-genfscon sysfs /devices/platform/gpu/uevent u:object_r:v3d_sys_file:s0
+genfscon sysfs /devices/platform/v3dbus/fec00000.v3d/uevent u:object_r:sysfs_gpu:s0
+genfscon sysfs /devices/platform/gpu/uevent u:object_r:sysfs_gpu:s0
