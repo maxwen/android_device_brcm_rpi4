@@ -3,3 +3,5 @@ type btuart, domain;
 type btuart_exec, exec_type, file_type, vendor_file_type;
 
 init_daemon_domain(btuart)
+
+allow btuart hci_attach_dev:chr_file {rw_file_perms};
