@@ -14,7 +14,7 @@
 // limitations under the License.
 //
 
-#define LOG_TAG "android.hardware.bluetooth@1.0-btrpi3"
+#define LOG_TAG "android.hardware.bluetooth@1.0-btrpi4"
 #include <errno.h>
 #include <fcntl.h>
 #include <poll.h>
@@ -69,21 +69,13 @@ namespace android {
 namespace hardware {
 namespace bluetooth {
 namespace V1_0 {
-namespace btrpi3 {
+namespace btrpi4 {
 
 int BluetoothHci::openBtHci() {
 
   ALOGI( "%s", __func__);
 
   int hci_interface = 0;
-
-  const char defaultBoard[] = "rpi-3-b";
-  char value[PROPERTY_VALUE_MAX];
-  property_get("ro.boot.board", value, defaultBoard);
-
-  if (strcmp(value, defaultBoard)) { // RPi 3B+
-    hci_interface = 1;
-  }
 
   rfkill_state_ = NULL;
   rfKill(1);
@@ -207,7 +199,6 @@ end:
 }
 
 int BluetoothHci::findRfKill() {
-#if 0
     char rfkill_type[64];
     char type[16];
     int fd, size, i;
@@ -229,20 +220,6 @@ int BluetoothHci::findRfKill() {
             break;
         }
     }
-#endif
-    const char defaultBoard[] = "rpi-3-b";
-
-    char value[PROPERTY_VALUE_MAX];
-    property_get("ro.boot.board", value, defaultBoard);
-
-    if (!strcmp(value, defaultBoard)) {
-
-        ::asprintf(&rfkill_state_, "/sys/devices/platform/soc/3f201000.serial/tty/ttyAMA0/hci0/rfkill1/state");
-    } else {
-
-        ::asprintf(&rfkill_state_, "/sys/devices/platform/soc/3f201000.serial/tty/ttyAMA0/hci1/rfkill2/state");
-    }
-
     return 0;
 }
 
@@ -362,7 +339,7 @@ IBluetoothHci* HIDL_FETCH_IBluetoothHci(const char* /* name */) {
   return new BluetoothHci();
 }
 
-}  // namespace btrpi3
+}  // namespace btrpi4
 }  // namespace V1_0
 }  // namespace bluetooth
 }  // namespace hardware

@@ -86,6 +86,11 @@ PRODUCT_PACKAGES += \
     libkeystore-wifi-hidl \
     libkeystore-engine-wifi-hidl
 
+# bluetooth
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0-service.rpi4 \
+    btuart
+
 PRODUCT_COPY_FILES += \
     hardware/broadcom/wlan/bcmdhd/config/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
 
@@ -136,6 +141,6 @@ PRODUCT_PACKAGES += \
     qti-telephony-utils \
     qti_telephony_utils.xml
 
-# TODO hwcomposer needs this for correct colors
+# we always have this for webview
 PRODUCT_PACKAGES += \
-    libyuv
+    Chromium

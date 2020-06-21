@@ -29,7 +29,7 @@ namespace android {
 namespace hardware {
 namespace bluetooth {
 namespace V1_0 {
-namespace btrpi3 {
+namespace btrpi4 {
 
 using ::android::hardware::Return;
 using ::android::hardware::hidl_vec;
@@ -69,7 +69,7 @@ class BluetoothHci : public IBluetoothHci {
 
 extern "C" IBluetoothHci* HIDL_FETCH_IBluetoothHci(const char* name);
 
-}  // namespace btrpi3
+}  // namespace btrpi4
 }  // namespace V1_0
 }  // namespace bluetooth
 }  // namespace hardware
