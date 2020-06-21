@@ -54,4 +54,19 @@
         <item>"/system/framework/arm/boot.oat"</item>
         <item>"/system/framework/arm/boot-core-libart.oat"</item>
     </string-array>
+    
+    <bool name="config_enableAutoPowerModes">false</bool>
+    
+    <bool translatable="false" name="config_enableAutoSuspend">false</bool>
+
+    <integer name="config_minimumScreenOffTimeout">50000</integer>
+
+    <!--<bool name="config_dozeAlwaysOnDisplayAvailable">false</bool>-->
+    
+    <bool name="config_safe_media_volume_enabled">false</bool>
+
+    <bool name="config_safe_media_disable_on_volume_up">false</bool>
+    
+    <bool name="config_smart_battery_available">false</bool>
+
 </resources>
