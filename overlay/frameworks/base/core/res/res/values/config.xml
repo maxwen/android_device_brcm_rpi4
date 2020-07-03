@@ -69,4 +69,5 @@
     
     <bool name="config_smart_battery_available">false</bool>
 
+    <string name="config_defaultSystemCaptionsService"></string>
 </resources>
