@@ -1,0 +1,42 @@
+# sync omni source
+
+Refer to http://source.android.com/source/downloading.html
+Refer to https://github.com/omnirom/android
+Refer to https://github.com/omnirom/android
+
+$ repo init -u git://github.com/omnirom/android.git -b android-10
+
+copy https://github.com/maxwen/android_device_brcm_rpi4/blob/android-10/local_manifest.xml
+into .repo/local_manifests/
+
+$ repo sync
+
+# Build Android source
+
+Refer to http://source.android.com/source/building.html
+
+# prepare environment
+
+$ export ROM_BUILDTYPE=MICROG
+$ export TEMPORARY_DISABLE_PATH_RESTRICTIONS=true
+$ export ALLOW_MISSING_DEPENDENCIES=true
+$ export PRODUCT_EXCLUDE_EXTRA_PACKAGES=true
+$ source build/envsetup.sh
+$ lunch omni_rpi4-userdebug
+
+# copy kernel config
+
+cp $ANDROID_BUILD_TOP/device/brcm/rpi4/omni_rpi4_defconfig $ANDROID_BUILD_TOP/kernel/arpi/arch/arm/configs
+
+# build
+
+make bootimage systemimage vendorimage
+
+Use -j[n] option with make, if build host has a good number of CPU cores.
+
+# Prepare sd card
+
+Check and adjust to your needs (default layout for 4gb sd-card)
+$ANDROID_BUILD_TOP/device/brcm/rpi4/mk-raspi-small-image.sh
+
+Flash image to your sd-card
