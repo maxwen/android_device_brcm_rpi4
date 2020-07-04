@@ -11,6 +11,7 @@
 
 /vendor/bin/btuart   u:object_r:btuart_exec:s0
 /vendor/bin/hw/android\.hardware\.bluetooth@1\.0-service\.rpi4 u:object_r:hal_bluetooth_rpi4_exec:s0
+/vendor/bin/hw/android\.hardware\.camera\.provider@2\.4-external-service\.rpi4    u:object_r:hal_camera_default_exec:s0
 
 /vendor/lib/hw/gralloc\.rpi4\.so         u:object_r:same_process_hal_file:s0
 /vendor/lib/dri/gallium_dri\.so          u:object_r:same_process_hal_file:s0

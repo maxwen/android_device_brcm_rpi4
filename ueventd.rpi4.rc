@@ -11,3 +11,5 @@
 /dev/ttyACM0                                                                 0660   system     radio
 
 /dev/ion                  0664   system     system
+/dev/video0               0660   system     camera
+/dev/video1               0660   system     camera
