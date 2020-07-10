@@ -2,7 +2,6 @@
 
 Refer to http://source.android.com/source/downloading.html
 Refer to https://github.com/omnirom/android
-Refer to https://github.com/omnirom/android
 
 $ repo init -u git://github.com/omnirom/android.git -b android-10
 
@@ -28,13 +27,17 @@ $ lunch omni_rpi4-userdebug
 
 cp $ANDROID_BUILD_TOP/device/brcm/rpi4/omni_rpi4_defconfig $ANDROID_BUILD_TOP/kernel/arpi/arch/arm/configs
 
+# add any not yet merged changes and fixes specific for rpi4
+
+Refer to https://gerrit.omnirom.org/q/topic:raspi_bits
+
 # build
 
 make bootimage systemimage vendorimage
 
 Use -j[n] option with make, if build host has a good number of CPU cores.
 
-# Prepare sd card
+# prepare sd card
 
 Check and adjust to your needs (default layout for 4gb sd-card)
 $ANDROID_BUILD_TOP/device/brcm/rpi4/mk-raspi-small-image.sh
