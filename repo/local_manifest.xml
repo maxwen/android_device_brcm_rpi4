@@ -2,9 +2,6 @@
 <manifest>
     <!-- Graphics -->
     <remove-project name="platform/external/mesa3d" />
-    <!-- need to stick to 9.0 version cause there is only arm64 suppport in later versions -->
-    <remove-project name="android_packages_apps_OmniChromium" />
-    <project path="packages/apps/OmniChromium" name="android_packages_apps_OmniChromium" remote="gitlab" revision="android-9.0" />
 
     <remote name="arpi" fetch="https://github.com/android-rpi"/>
     <project path="external/mesa3d" name="external_mesa3d" revision="v3d-20.1" remote="arpi"/>

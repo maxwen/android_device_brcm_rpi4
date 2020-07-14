@@ -146,7 +146,3 @@ PRODUCT_PACKAGES += \
     qti_telephony_hidl_wrapper.xml \
     qti-telephony-utils \
     qti_telephony_utils.xml
-
-# we always have this for webview
-PRODUCT_PACKAGES += \
-    Chromium
