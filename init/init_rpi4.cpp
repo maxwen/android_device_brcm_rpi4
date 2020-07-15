@@ -92,12 +92,10 @@ void set_revision_property() {
 
 void vendor_load_properties()
 {
-    std::string name;
-    LOG(ERROR) << "vendor_load_properties";
-    property_override("ro.build.fingerprint", "Raspberry/omni_rpi4/rpi4:10/QKQ1.190716.003/1910071200:userdebug/release-keys");
+    /*property_override("ro.build.fingerprint", "Raspberry/omni_rpi4/rpi4:10/QKQ1.190716.003/1910071200:userdebug/release-keys");
     property_override("ro.system.build.fingerprint", "Raspberry/omni_rpi4/rpi4:10/QKQ1.190716.003/1910071200:userdebug/release-keys");
     property_override("ro.product.build.fingerprint", "Raspberry/omni_rpi4/rpi4:10/QKQ1.190716.003/1910071200:userdebug/release-keys");
-    property_override("ro.vendor.build.fingerprint", "Raspberry/omni_rpi4/rpi4:10/QKQ1.190716.003/1910071200:userdebug/release-keys");
+    property_override("ro.vendor.build.fingerprint", "Raspberry/omni_rpi4/rpi4:10/QKQ1.190716.003/1910071200:userdebug/release-keys");*/
     
     std::string serial = get("/proc/device-tree/serial-number", std::string(""));
     property_override("ro.serialno", serial);
