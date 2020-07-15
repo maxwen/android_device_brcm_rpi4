@@ -27,7 +27,7 @@ $ lunch omni_rpi4-userdebug
 
 # copy kernel config
 
-cp $ANDROID_BUILD_TOP/device/brcm/rpi4/omni_rpi4_defconfig $ANDROID_BUILD_TOP/kernel/arpi/arch/arm/configs
+cp $ANDROID_BUILD_TOP/device/brcm/rpi4/omni_rpi4_defconfig $ANDROID_BUILD_TOP/kernel/arpi/arch/arm64/configs
 
 # add any not yet merged changes and fixes specific for rpi4
 

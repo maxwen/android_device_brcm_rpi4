@@ -38,7 +38,7 @@ on boot
     setprop net.dns1 8.8.8.8
     setprop net.dns2 8.8.4.4
 
-# fake some battery state
+    # fake some battery state
     setprop status.battery.state Slow
     setprop status.battery.level 5
     setprop status.battery.level_raw  50
