@@ -1,4 +1,4 @@
-Builds as 64bit only so make sure you jave propper firmware!
+Builds as 64bit only so make sure you have propper firmware!
 
 # sync omni source
 
@@ -7,8 +7,7 @@ Refer to https://github.com/omnirom/android
 
 $ repo init -u git://github.com/omnirom/android.git -b android-10
 
-copy https://github.com/maxwen/android_device_brcm_rpi4/blob/android-10/local_manifest.xml
-into .repo/local_manifests/
+copy https://github.com/maxwen/android_device_brcm_rpi4/blob/android-10/repo/local_manifest.xml .repo/local_manifests/
 
 $ repo sync
 
@@ -27,7 +26,7 @@ $ lunch omni_rpi4-userdebug
 
 # copy kernel config
 
-cp $ANDROID_BUILD_TOP/device/brcm/rpi4/omni_rpi4_defconfig $ANDROID_BUILD_TOP/kernel/arpi/arch/arm64/configs
+cp $ANDROID_BUILD_TOP/device/brcm/rpi4/kernel/omni_rpi4_defconfig $ANDROID_BUILD_TOP/kernel/arpi/arch/arm64/configs
 
 # add any not yet merged changes and fixes specific for rpi4
 
@@ -41,7 +40,7 @@ Use -j[n] option with make, if build host has a good number of CPU cores.
 
 # prepare sd card
 
-Check and adjust to your needs (default layout for 4gb sd-card)
-$ANDROID_BUILD_TOP/device/brcm/rpi4/mk-raspi-small-image.sh
+Check and adjust to your needs (default layout for 5gb)
+$ANDROID_BUILD_TOP/device/brcm/rpi4/scripts/mk-raspi64-large-image.sh
 
 Flash image to your sd-card
