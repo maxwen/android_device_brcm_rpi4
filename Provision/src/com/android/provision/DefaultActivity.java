@@ -50,7 +50,7 @@ public class DefaultActivity extends Activity {
                 BatteryManager.BATTERY_PLUGGED_AC | BatteryManager.BATTERY_PLUGGED_USB
                 | BatteryManager.BATTERY_PLUGGED_WIRELESS);
 
-        // disable screen lock
+        // disable screen lock -> TODO on first boot it still comes up with initial swipe
         LockPatternUtils lockPatternUtils = new LockPatternUtils(getApplicationContext());
         lockPatternUtils.setLockScreenDisabled(true, UserHandle.myUserId());
 
