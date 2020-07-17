@@ -18,23 +18,30 @@
 <profiles xmlns:launcher="http://schemas.android.com/apk/res-auto" >
 
     <grid-option
-        launcher:name="8_by_6"
-        launcher:numRows="6"
-        launcher:numColumns="8"
+        launcher:name="7_by_5"
+        launcher:numRows="5"
+        launcher:numColumns="7"
         launcher:numFolderRows="5"
         launcher:numFolderColumns="5"
-        launcher:numHotseatIcons="8"
+        launcher:numHotseatIcons="7"
         launcher:defaultLayoutId="@xml/default_workspace_6x6"
-        launcher:numColumnsAllApps="8" >
+        launcher:numColumnsAllApps="7" >
 
         <display-option
-            launcher:name="Large Phone"
-            launcher:minWidthDps="100"
-            launcher:minHeightDps="100"
-            launcher:iconImageSize="54"
+            launcher:name="1280x800"
+            launcher:minWidthDps="500"
+            launcher:minHeightDps="900"
+            launcher:iconImageSize="60"
             launcher:iconTextSize="15"
             launcher:canBeDefault="true" />
 
+        <display-option
+            launcher:name="1920x1080"
+            launcher:minWidthDps="900"
+            launcher:minHeightDps="1500"
+            launcher:iconImageSize="80"
+            launcher:iconTextSize="18"
+            launcher:canBeDefault="true" />
     </grid-option>
 
 </profiles>
