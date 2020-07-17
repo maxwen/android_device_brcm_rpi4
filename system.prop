@@ -3,7 +3,7 @@
 gralloc.drm.device=/dev/dri/card0
 gralloc.drm.kms=/dev/dri/card1
 ro.opengles.version=131072
-ro.sf.lcd_density=160
+ro.sf.lcd_density=180
 
 # GPS
 ro.kernel.android.gps=ttyACM0
