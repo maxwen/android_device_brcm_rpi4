@@ -1,1 +1,2 @@
 gpu_access(untrusted_app_all)
+allow untrusted_app_25 net_dns_prop:file read;
