@@ -46,22 +46,12 @@
             5 - Dismiss IME if shown. Otherwise go to home
     -->
     <integer name="config_shortPressOnPowerBehavior">0</integer>
-
-    <string-array translatable="false" name="config_defaultPinnerServiceFiles">
-        <item>"/system/framework/framework.jar"</item>
-        <item>"/system/framework/oat/arm/services.odex"</item>
-        <item>"/system/framework/services.jar"</item>
-        <item>"/system/framework/arm/boot.oat"</item>
-        <item>"/system/framework/arm/boot-core-libart.oat"</item>
-    </string-array>
     
     <bool name="config_enableAutoPowerModes">false</bool>
     
     <bool translatable="false" name="config_enableAutoSuspend">false</bool>
 
     <integer name="config_minimumScreenOffTimeout">50000</integer>
-
-    <!--<bool name="config_dozeAlwaysOnDisplayAvailable">false</bool>-->
     
     <bool name="config_safe_media_volume_enabled">false</bool>
 
@@ -70,4 +60,11 @@
     <bool name="config_smart_battery_available">false</bool>
 
     <string name="config_defaultSystemCaptionsService"></string>
+    
+    <string-array name="config_locationProviderPackageNames" translatable="false">
+        <!-- The Google provider -->
+        <item>com.google.android.gms</item>
+        <!-- The standard AOSP fused location provider -->
+        <item>com.android.location.fused</item>
+    </string-array>
 </resources>
