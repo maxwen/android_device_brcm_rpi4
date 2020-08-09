@@ -100,6 +100,8 @@
 
     <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
 
+    <bool translatable="false" name="config_wifi_revert_country_code_on_cellular_loss">false</bool>
+
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
          USB interfaces.  If the device doesn't want to support tething over USB this should
          be empty.  An example would be "usb.*" -->
