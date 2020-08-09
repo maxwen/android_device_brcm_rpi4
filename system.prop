@@ -23,6 +23,7 @@ persist.sys.usb.config=mtp
 
 # Wifi
 wifi.interface=wlan0
+ro.boot.wificountrycode=00
 
 ro.omni.device_bpf_ready=1
 
