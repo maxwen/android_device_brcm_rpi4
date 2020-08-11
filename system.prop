@@ -28,3 +28,8 @@ ro.omni.device_bpf_ready=1
 
 ro.apex.updatable=true
 
+# Audio
+# card 0 = hdmi
+# card 1 = headphone jack
+audio.pcm.card=0
+audio.pcm.device=0
