@@ -24,10 +24,6 @@ $ export PRODUCT_EXCLUDE_EXTRA_PACKAGES=true
 $ source build/envsetup.sh
 $ lunch omni_rpi4-userdebug
 
-# copy kernel config
-
-cp $ANDROID_BUILD_TOP/device/brcm/rpi4/kernel/omni_rpi4_defconfig $ANDROID_BUILD_TOP/kernel/arpi/arch/arm64/configs
-
 # add any not yet merged changes and fixes specific for rpi4
 
 Refer to https://gerrit.omnirom.org/q/topic:raspi_bits
