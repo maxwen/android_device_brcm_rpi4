@@ -56,7 +56,7 @@ service btuart /vendor/bin/btuart /dev/ttyAMA0 bcm43xx 3000000 flow - ${ro.seria
     group bluetooth net_bt_admin system
 
 service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
-    -O/data/vendor/wifi/wpa/sockets \
+    -O/data/vendor/wifi/wpa/sockets -puse_p2p_group_interface=1 -dd \
     -g@android:wpa_wlan0
     interface android.hardware.wifi.supplicant@1.0::ISupplicant default
     interface android.hardware.wifi.supplicant@1.1::ISupplicant default
