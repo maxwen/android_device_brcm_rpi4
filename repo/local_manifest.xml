@@ -6,13 +6,14 @@
     <remote name="arpi" fetch="https://github.com/android-rpi"/>
     <!--<project path="external/mesa3d" name="external_mesa3d" revision="v3d-20.1" remote="arpi"/>
     <project path="external/drm_gralloc" name="external_drm_gralloc" revision="v3d-20.1" remote="arpi"/>-->
-    <project path="hardware/arpi" name="hardware_arpi" revision="arpi-10" remote="arpi"/>
+    <!--<project path="hardware/arpi" name="hardware_arpi" revision="arpi-10" remote="arpi"/>-->
     <!--<project path="kernel/arpi" name="kernel_arpi" revision="arpi-5.4.y" remote="arpi"/>-->
 
     <remote name="maxwen" fetch="https://github.com/maxwen"/>
     <project path="vendor/brcm" name="proprietary_vendor_brcm" remote="maxwen" revision="android-10"/>
     <project path="device/brcm/rpi4" name="android_device_brcm_rpi4" remote="maxwen" revision="android-10"/>
     <project path="kernel/arpi" name="kernel_arpi" remote="maxwen" revision="android-10"/>
+    <project path="hardware/arpi" name="hardware_arpi" remote="maxwen" revision="android-10"/>
 
     <remote name="lineage-rpi" fetch="https://github.com/lineage-rpi"/>
     <remove-project name="platform/external/drm_hwcomposer" />
