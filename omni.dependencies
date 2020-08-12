@@ -53,5 +53,8 @@
   },
   {
     "remove": "android_packages_apps_Provision"
+  },
+  {
+    "remove": "platform/packages/apps/Camera2"
   }
 ]
