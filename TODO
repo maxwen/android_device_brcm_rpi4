@@ -1,5 +1,7 @@
 TODO:
 
 -p2p e.g. screencast
--5Ghz soft AP
+-5Ghz soft AP (does not work on a lot of phones either)
 -flexible boot config for sd-card vs. usb boot e.g. kernel cmdline
+-fix chromium
+-think about how to handle OTA

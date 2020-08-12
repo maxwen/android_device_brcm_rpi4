@@ -9,6 +9,8 @@ $ repo init -u git://github.com/omnirom/android.git -b android-10
 
 copy https://github.com/maxwen/android_device_brcm_rpi4/blob/android-10/repo/local_manifest.xml .repo/local_manifests/
 
+If you are not building based on omni to use roomservice check local_manifest_full.xml
+
 $ repo sync
 
 # Build Android source

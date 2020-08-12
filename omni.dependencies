@@ -1,0 +1,57 @@
+[
+  {
+    "remote": "github",
+    "repository": "maxwen/kernel_arpi",
+    "target_path": "kernel/arpi",
+    "revision": "android-10"
+  },
+  {
+    "remote": "github",
+    "repository": "maxwen/hardware_arpi",
+    "target_path": "hardware/arpi",
+    "revision": "android-10"
+  },
+  {
+    "remote": "github",
+    "repository": "maxwen/proprietary_vendor_brcm",
+    "target_path": "vendor/brcm",
+    "revision": "android-10"
+  },
+  {
+    "remote": "github",
+    "repository": "lineage-rpi/android_external_gbm_gralloc",
+    "target_path": "external/gbm_gralloc",
+    "revision": "lineage-17.1"
+  },
+  {
+    "remote": "github",
+    "override": "platform/external/drm_hwcomposer",
+    "repository": "lineage-rpi/android_external_drm_hwcomposer",
+    "target_path": "external/drm_hwcomposer",
+    "revision": "lineage-17.1"
+  },
+  {
+    "remote": "github",
+    "override": "platform/external/libdrm",
+    "repository": "lineage-rpi/android_external_libdrm",
+    "target_path": "external/libdrm",
+    "revision": "lineage-17.1"
+  },
+  {
+    "remote": "github",
+    "override": "platform/external/minigbm",
+    "repository": "lineage-rpi/android_external_minigbm",
+    "target_path": "external/minigbm",
+    "revision": "lineage-17.1"
+  },
+  {
+    "remote": "github",
+    "override": "platform/external/mesa3d",
+    "repository": "lineage-rpi/android_external_mesa3d",
+    "target_path": "external/mesa3d",
+    "revision": "lineage-17.1"
+  },
+  {
+    "remove": "android_packages_apps_Provision"
+  }
+]
