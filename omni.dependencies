@@ -19,9 +19,9 @@
   },
   {
     "remote": "github",
-    "repository": "lineage-rpi/android_external_gbm_gralloc",
+    "repository": "maxwen/android_external_gbm_gralloc",
     "target_path": "external/gbm_gralloc",
-    "revision": "lineage-17.1"
+    "revision": "android-10"
   },
   {
     "remote": "github",
