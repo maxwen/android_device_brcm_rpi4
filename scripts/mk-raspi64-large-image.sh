@@ -86,7 +86,7 @@ if [ -f $OUT_IMAGE_FILE ]; then
 fi
 
 echo "create empty image"
-dd if=/dev/zero of="$OUT_IMAGE_FILE" bs=1M count=5120
+dd if=/dev/zero of="$OUT_IMAGE_FILE" bs=1M count=8192
 
 echo "create partitions"
 sudo sfdisk "$OUT_IMAGE_FILE"  << EOF
