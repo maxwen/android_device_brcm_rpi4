@@ -175,4 +175,6 @@
 
     <bool name="config_intrusiveBatteryLed">false</bool>
 
+    <bool name="config_dozeAlwaysOnDisplayAvailable">false</bool>
+
 </resources>
