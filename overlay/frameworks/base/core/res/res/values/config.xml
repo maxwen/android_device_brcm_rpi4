@@ -173,4 +173,6 @@
 
     <bool name="config_supportAutoRotation">false</bool>
 
+    <bool name="config_intrusiveBatteryLed">false</bool>
+
 </resources>
