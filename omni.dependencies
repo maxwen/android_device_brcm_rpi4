@@ -1,13 +1,13 @@
 [
   {
     "remote": "github",
-    "repository": "maxwen/kernel_arpi",
-    "target_path": "kernel/arpi",
+    "repository": "maxwen/android_kernel_brcm_arpi",
+    "target_path": "kernel/brcm/arpi",
     "revision": "android-10"
   },
   {
     "remote": "github",
-    "repository": "maxwen/hardware_arpi",
+    "repository": "maxwen/android_hardware_arpi",
     "target_path": "hardware/arpi",
     "revision": "android-10"
   },
