@@ -11,6 +11,14 @@ copy https://github.com/maxwen/android_device_brcm_rpi4/blob/android-10/repo/loc
 
 If you are not building based on omni to use roomservice check local_manifest_full.xml
 
+If you want to use the contents of omni-private.xml please check
+https://github.com/omnirom/android/README and head over to send us a short
+email notice. Otherwise you can simple remove the include of that xml
+file and build without
+
+This uses some repos from https://github.com/lineage-rpi
+please check omni.dependencies for the complete list
+
 $ repo sync
 
 # Build Android source
@@ -38,7 +46,15 @@ Use -j[n] option with make, if build host has a good number of CPU cores.
 
 # prepare sd card
 
-Check and adjust to your needs (default layout for 5gb)
+Check and adjust to your needs (default layout for 8gb)
 $ANDROID_BUILD_TOP/device/brcm/rpi4/scripts/mk-raspi64-large-image.sh
 
 Flash image to your sd-card
+
+Configurations
+
+Change audio output from hdmi to headphone jack
+system.prop change audio.pcm.card=0 -> audio.pcm.card=1
+
+Change config.txt
+vendor/brcm/rpi4/proprietary/boot/config.txt

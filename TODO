@@ -2,6 +2,9 @@ TODO:
 
 -p2p e.g. screencast
 -5Ghz soft AP (does not work on a lot of phones either)
--flexible boot config for sd-card vs. usb boot e.g. kernel cmdline
+-flexible boot config for sd-card vs. usb boot e.g. kernel cmdline (fstab)
 -fix chromium
 -think about how to handle OTA
+-add device parts app (for device specific config options)
+-kernel cmdline option for default audio device (custom init sets property then)
+-consider what to do with always on (ambient) display
