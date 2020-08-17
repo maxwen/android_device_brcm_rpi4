@@ -16,4 +16,10 @@
 <resources>
     <string name="advanced_settings">Advanced</string>
     <string name="wip">Work in progress</string>
+    <string name="rotation_lock_title">Force rotation</string>
+    <string name="rotation_lock_off">Off</string>
+    <string name="rotation_lock_landscape">Landscape</string>
+    <string name="rotation_lock_portrait">Portrait</string>
+    <string name="tuner_nav_bar_system_keys_title">Enable system keys suppprt</string>
+    <string name="tuner_nav_bar_system_keys_summary">Allow to emulate power, volume up and volume down keys</string>
 </resources>

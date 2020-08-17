@@ -1,0 +1,13 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string-array name="rotation_lock_entries" translatable="false">
+        <item>@string/rotation_lock_off</item>
+        <item>@string/rotation_lock_landscape</item>
+        <item>@string/rotation_lock_portrait</item>
+    </string-array>
+
+    <string-array name="rotation_lock_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>

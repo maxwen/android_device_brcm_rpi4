@@ -14,9 +14,15 @@
      limitations under the License.
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <Preference
-        android:key="wip"
-        android:title="@string/wip"
-        android:persistent="false" >
-    </Preference>
+    <ListPreference
+        android:key="rotation_lock"
+        android:title="@string/rotation_lock_title"
+        android:entries="@array/rotation_lock_entries"
+        android:entryValues="@array/rotation_lock_values" />
+
+    <org.omnirom.omnilib.preference.SecureSettingSwitchPreference
+        android:key="sysui_nav_bar_system_keys"
+        android:title="@string/tuner_nav_bar_system_keys_title"
+        android:summary="@string/tuner_nav_bar_system_keys_summary"
+        android:defaultValue="false" />
 </PreferenceScreen>

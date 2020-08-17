@@ -17,32 +17,40 @@
 */
 package org.omnirom.device;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
+import android.content.Context;
 import android.content.res.Resources;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.RemoteException;
+import android.os.ServiceManager;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
-import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
-import androidx.preference.TwoStatePreference;
 import android.provider.Settings;
-import android.text.TextUtils;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ListView;
+import android.view.IWindowManager;
+import android.view.Surface;
 import android.util.Log;
+
+import com.android.internal.view.RotationPolicy;
 
 public class DeviceSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
+    private static final String TAG = "DeviceSettings";
+    private static final String KEY_ROTATION_LOCK = "rotation_lock";
 
-     @Override
+    private IWindowManager mWindowManager;
+    private ListPreference mRotationLock;
+
+    @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.main, rootKey);
+        mWindowManager = IWindowManager.Stub.asInterface(
+                ServiceManager.getService(Context.WINDOW_SERVICE));
+        mRotationLock = (ListPreference) findPreference(KEY_ROTATION_LOCK);
+        mRotationLock.setOnPreferenceChangeListener(this);
+        mRotationLock.setSummary(mRotationLock.getEntry());
     }
 
     @Override
@@ -52,6 +60,30 @@ public class DeviceSettings extends PreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mRotationLock) {
+            String value = (String) newValue;
+            int rotationLockValue = Integer.valueOf(value);
+            try {
+                if (rotationLockValue == 0) {
+                    mWindowManager.thawRotation();
+                    mWindowManager.setRotateForApp(0);
+                    Settings.System.putInt(getContext().getContentResolver(),
+                            Settings.System.ACCELEROMETER_ROTATION, 0);
+                } else if (rotationLockValue == 1) {
+                    mWindowManager.freezeRotation(Surface.ROTATION_0);
+                    mWindowManager.setRotateForApp(2);
+                    Settings.System.putInt(getContext().getContentResolver(),
+                            Settings.System.ACCELEROMETER_ROTATION, 1);
+                } else if (rotationLockValue == 2) {
+                    mWindowManager.freezeRotation(Surface.ROTATION_270);
+                    mWindowManager.setRotateForApp(2);
+                    Settings.System.putInt(getContext().getContentResolver(),
+                            Settings.System.ACCELEROMETER_ROTATION, 1);                }
+                mRotationLock.setSummary(mRotationLock.getEntries()[rotationLockValue]);
+            } catch (RemoteException e){
+                Log.e(TAG, "freezeRotation", e);
+            }
+        }
         return true;
     }
 }

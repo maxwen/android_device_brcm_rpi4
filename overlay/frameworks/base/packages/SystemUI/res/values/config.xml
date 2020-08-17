@@ -20,8 +20,6 @@
 <!-- These resources are around just to allow their values to be customized
      for different hardware and product builds. -->
 <resources>
-    <bool name="config_nav_bar_system_keys">true</bool>
-
     <!-- Nav bar button default ordering/layout -->
     <string name="config_navBarLayout" translatable="false">left,volup,voldown,back;home;recent,power,right</string>
     
