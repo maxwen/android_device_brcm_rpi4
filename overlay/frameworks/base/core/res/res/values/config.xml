@@ -47,7 +47,7 @@
             4 - Go to home
             5 - Dismiss IME if shown. Otherwise go to home
     -->
-    <integer name="config_shortPressOnPowerBehavior">0</integer>
+    <!--<integer name="config_shortPressOnPowerBehavior">0</integer>-->
     
     <bool name="config_enableAutoPowerModes">false</bool>
     
@@ -172,6 +172,8 @@
     <bool name="config_enableMultiUserUI">true</bool>
 
     <bool name="config_supportAutoRotation">false</bool>
+
+    <bool name="config_allowAllRotations">true</bool>
 
     <bool name="config_intrusiveBatteryLed">false</bool>
 

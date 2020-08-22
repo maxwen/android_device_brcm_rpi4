@@ -28,6 +28,6 @@
     </string>
     
     <string name="quick_settings_tiles_extra" translatable="false">
-        aod,caffeine,adb_network,scr,weather,heads_up,immersive,screenshot
+        aod,caffeine,adb_network,scr,weather,heads_up,immersive,screenshot,power
     </string>
 </resources>
