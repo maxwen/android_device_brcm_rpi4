@@ -35,6 +35,9 @@ on zygote-start
     mkdir /data/vendor/wifi/wpa 0770 wifi wifi
     mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
 
+    # Create directories for Location services
+    mkdir /data/vendor/location 0770 gps gps
+
 on boot
     setprop net.dns1 8.8.8.8
     setprop net.dns2 8.8.4.4

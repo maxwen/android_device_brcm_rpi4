@@ -154,5 +154,14 @@
             <name>ICameraProvider</name>
             <instance>external/0</instance>
         </interface>
-    </hal>    
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.gnss</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IGnss</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
 </manifest>
