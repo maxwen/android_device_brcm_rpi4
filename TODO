@@ -5,6 +5,9 @@ TODO:
 -flexible boot config for sd-card vs. usb boot e.g. kernel cmdline (fstab)
 -fix chromium
 -think about how to handle OTA
--add device parts app (for device specific config options)
+-add device specific config options
 -kernel cmdline option for default audio device (custom init sets property then)
+-kernel cmdline option for default gps device (custom init sets property then)
 -consider what to do with always on (ambient) display
+-support usb cameras
+-screen distortion on higher resolutions
