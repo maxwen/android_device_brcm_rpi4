@@ -17,5 +17,5 @@
 -->
 <resources>
     <!-- 416dp -->
-    <dimen name="notification_panel_width">600dp</dimen>
+    <dimen name="notification_panel_width">580dp</dimen>
 </resources>

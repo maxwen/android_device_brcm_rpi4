@@ -16,6 +16,6 @@
 */
 -->
 <resources>
-    <!-- 416dp -->
-    <dimen name="notification_panel_width">580dp</dimen>
+    <dimen name="quick_qs_offset_height">40dp</dimen>
+    <dimen name="quick_qs_total_height">168dp</dimen>
 </resources>

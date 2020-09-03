@@ -17,7 +17,7 @@
 -->
 <resources>
     <!-- 12sp -->
-    <dimen name="qs_tile_text_size">14sp</dimen>
+    <dimen name="qs_tile_text_size">13sp</dimen>
     
     <!-- the padding on the start of the statusbar -->
     <dimen name="status_bar_padding_start">16dp</dimen>
