@@ -106,6 +106,7 @@ PRODUCT_PACKAGES += \
     hostapd \
     hostapd_cli \
     wpa_supplicant \
+    wpa_cli \
     wpa_supplicant.conf \
     libkeystore-wifi-hidl \
     libkeystore-engine-wifi-hidl
@@ -174,3 +175,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     DeviceParts
+
+PRODUCT_PACKAGES += \
+    htop \
+    zip

@@ -17,8 +17,6 @@
 # Inherit device configuration
 DEVICE_PATH := device/brcm/rpi4
 
-BOARD_INCLUDE_CMDLINE_TOOLS := true
-
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
