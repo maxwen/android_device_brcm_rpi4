@@ -58,3 +58,10 @@ system.prop change audio.pcm.card=0 -> audio.pcm.card=1
 
 Change config.txt
 vendor/brcm/rpi4/proprietary/boot/config.txt
+
+USB boot
+Change fstab.rpi4 to
+
+/dev/block/sda2    /system             ext4      ro,barrier=1                                          wait,first_stage_mount
+/dev/block/sda3    /vendor             ext4      ro,barrier=1                                          wait,first_stage_mount
+/dev/block/sda4    /data               ext4      noatime,nosuid,nodev,barrier=1,noauto_da_alloc,discard latemount,wait,check,fileencryption=aes-256-xts
