@@ -2,7 +2,12 @@
 
 #IN_IMAGE_DIR=$OUT_DIR/target/product/rpi4/
 #IN_BOOT_FILES=$ANDROID_BUILD_TOP/vendor/brcm/rpi4/proprietary/boot/
-#OUT_IMAGE_FILE=$HOME/raspberrypi/omni.img
+#OUT_IMAGE_FILE=$HOME/raspberrypi/omni-$ROM_BUILDTYPE.img
+
+if [ -z $ROM_BUILDTYPE ]; then
+    echo "missing ROM_BUILDTYPE"
+    exit 0
+fi
 
 options=$(getopt -o ho:i:b: -- "$@")
 [ $? -eq 0 ] || { 

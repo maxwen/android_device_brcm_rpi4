@@ -4,6 +4,11 @@
 #IN_BOOT_FILES=$ANDROID_BUILD_TOP/vendor/brcm/rpi4/proprietary/boot/
 #SD_CARD_DEVICE=/dev/sdc
 
+if [ -z $ROM_BUILDTYPE ]; then
+    echo "missing ROM_BUILDTYPE"
+    exit 0
+fi
+
 options=$(getopt -o hi:d:b: -- "$@")
 [ $? -eq 0 ] || { 
     echo "Incorrect options provided"
