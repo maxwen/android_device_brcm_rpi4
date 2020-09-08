@@ -3,6 +3,7 @@ TODO:
 -p2p e.g. screencast
 -5Ghz soft AP (does not work on a lot of phones either)
 -flexible boot config for sd-card vs. usb boot e.g. kernel cmdline (fstab)
+    -> first solution available using a dt overlay
 -fix chromium
 -think about how to handle OTA
 -add device specific config options
@@ -11,3 +12,4 @@ TODO:
 -consider what to do with always on (ambient) display
 -support usb cameras - preview works capture not
 -screen distortion on higher resolutions (seems to be on hdmi 1 only - maybe my device port is broken)
+-check why GPT devices wont boot from USB

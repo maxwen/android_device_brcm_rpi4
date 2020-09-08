@@ -35,7 +35,10 @@
 #include <android-base/properties.h>
 #include <android-base/logging.h>
 #include <android-base/strings.h>
+
 #include "property_service.h"
+#include "uevent.h"
+
 #include <sys/resource.h>
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
@@ -97,6 +100,24 @@ void vendor_load_properties()
     //property_override("ro.serialno", serial);
     
     set_revision_property();
+}
+
+void vendor_create_device_symlinks(const Uevent& uevent, std::vector<std::string>& links)
+{
+    LOG(INFO) << "vendor_create_device_symlinks: device " << uevent.device_name;
+
+    // TODO raspi hardcode start
+    int num = uevent.partition_num;
+    if (num == 2 || uevent.device_name.find("sda2") != std::string::npos
+                || uevent.device_name.find("mmcblk0p2") != std::string::npos) {
+        links.emplace_back("/dev/block/by-name/system");
+    } else if (num == 3 || uevent.device_name.find("sda3") != std::string::npos
+                || uevent.device_name.find("mmcblk0p3") != std::string::npos) {
+        links.emplace_back("/dev/block/by-name/vendor");
+    } else if (num == 4 || uevent.device_name.find("sda4") != std::string::npos
+                || uevent.device_name.find("mmcblk0p4") != std::string::npos) {
+        links.emplace_back("/dev/block/by-name/userdata");
+    }
 }
 }
 }

@@ -124,6 +124,8 @@ sudo cp "$IN_IMAGE_DIR/obj/KERNEL_OBJ/arch/arm64/boot/dts/broadcom/bcm2711-rpi-4
 sudo mkdir /mnt/tmp/overlays/
 sudo cp "$IN_IMAGE_DIR/obj/KERNEL_OBJ/arch/arm64/boot/dts/overlays/vc4-kms-v3d-pi4.dtbo" /mnt/tmp/overlays/
 sudo cp "$IN_IMAGE_DIR/obj/KERNEL_OBJ/arch/arm64/boot/dts/overlays/dwc2.dtbo" /mnt/tmp/overlays/
+sudo cp "$IN_IMAGE_DIR/obj/KERNEL_OBJ/arch/arm64/boot/dts/overlays/rpi-android-sdcard.dtbo" /mnt/tmp/overlays/
+sudo cp "$IN_IMAGE_DIR/obj/KERNEL_OBJ/arch/arm64/boot/dts/overlays/rpi-android-usb.dtbo" /mnt/tmp/overlays/
 sudo cp $IN_BOOT_FILES/* /mnt/tmp/
 sync
 

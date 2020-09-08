@@ -44,24 +44,47 @@ make bootimage systemimage vendorimage
 
 Use -j[n] option with make, if build host has a good number of CPU cores.
 
-# prepare sd card
+# prepare boot device (sdcard or USB device)
 
-Check and adjust to your needs (default layout for 8gb)
-$ANDROID_BUILD_TOP/device/brcm/rpi4/scripts/mk-raspi64-large-image.sh
+Devices with GPT partition table cant be used as an USB boot device
+You must use MBR (msdos) parition table
 
-Flash image to your sd-card
+The boot devices MUST contain 4 partitions with the following layout
+(parition sizes here are the minimum - userdata should be made bigger
+if you have the space)
+
+Device          Start      End  Sectors  Size Id Type
+boot               2    262145   262144  128M  c W95 FAT32 (LBA)
+system        264192   4458495  4194304    2G 83 Linux
+vendor        4458496  4982783   524288  256M 83 Linux
+userdata      4982784 16777215 11794432  5.6G 83 Linux
+
+THE PARTITION ORDER MUST BE LIKE THIS
+
+Switching between booting from sdcard and USB is done in config.txt
+by enabling the needed overlay
+
+...
+# booting from sdcard
+dtoverlay=rpi-android-sdcard
+
+# booting from usb
+dtoverlay=rpi-android-usb
+....
+
+You can still mess with the fstab if you want and dont use the overlay
+
+Note
+
+the files in scripts are what I use to create and update
+feel free to adjust and adpat to your needs if you want
+
+# flash to boot device with e.g. dd
 
 Configurations
 
 Change audio output from hdmi to headphone jack
 system.prop change audio.pcm.card=0 -> audio.pcm.card=1
 
-Change config.txt
+Change default config.txt
 vendor/brcm/rpi4/proprietary/boot/config.txt
-
-USB boot
-Change fstab.rpi4 to
-
-/dev/block/sda2    /system             ext4      ro,barrier=1                                          wait,first_stage_mount
-/dev/block/sda3    /vendor             ext4      ro,barrier=1                                          wait,first_stage_mount
-/dev/block/sda4    /data               ext4      noatime,nosuid,nodev,barrier=1,noauto_da_alloc,discard latemount,wait,check,fileencryption=aes-256-xts
