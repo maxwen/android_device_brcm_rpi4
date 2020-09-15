@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2014-2017 The OmniROM Project
+<!-- Copyright (C) 2014-2020 The OmniROM Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@
     <string name="rotation_lock_off">Off</string>
     <string name="rotation_lock_landscape">Landscape</string>
     <string name="rotation_lock_portrait">Portrait</string>
+    <string name="rotation_lock_portrait_reverse">Reverse Portrait</string>
     <string name="tuner_nav_bar_system_keys_title">Enable system keys suppprt</string>
     <string name="tuner_nav_bar_system_keys_summary">Allow to emulate power, volume up and volume down keys</string>
 </resources>

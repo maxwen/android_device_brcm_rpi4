@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2016 The OmniROM Project
+* Copyright (C) 2014-2020 The OmniROM Project
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -78,7 +78,13 @@ public class DeviceSettings extends PreferenceFragment implements
                     mWindowManager.freezeRotation(Surface.ROTATION_270);
                     mWindowManager.setRotateForApp(2);
                     Settings.System.putInt(getContext().getContentResolver(),
-                            Settings.System.ACCELEROMETER_ROTATION, 1);                }
+                            Settings.System.ACCELEROMETER_ROTATION, 1);
+                } else if (rotationLockValue == 3) {
+                    mWindowManager.freezeRotation(Surface.ROTATION_90);
+                    mWindowManager.setRotateForApp(2);
+                    Settings.System.putInt(getContext().getContentResolver(),
+                            Settings.System.ACCELEROMETER_ROTATION, 1);
+                }
                 mRotationLock.setSummary(mRotationLock.getEntries()[rotationLockValue]);
             } catch (RemoteException e){
                 Log.e(TAG, "freezeRotation", e);
