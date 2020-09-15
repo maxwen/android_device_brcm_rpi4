@@ -18,7 +18,6 @@ DEVICE_PATH := device/brcm/rpi4
 
 # Platform
 TARGET_NO_BOOTLOADER := true
-TARGET_NO_RECOVERY := false
 TARGET_NO_CHARGER := true
 TARGET_BOARD_PLATFORM := bcm2711
 
@@ -82,7 +81,9 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth/cfg
 
 BUILD_FINGERPRINT := Raspberry/omni_rpi4/rpi4:10/QKQ1.190716.003/1910071200:userdebug/release-keys
 
-# TWRP
+# recovery
+# change to false when building recoveryimage
+TARGET_NO_RECOVERY := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/recovery.fstab
 TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
 TARGET_RECOVERY_FORCE_PIXEL_FORMAT := "RGB_565"
