@@ -180,3 +180,5 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     htop \
     zip
+
+PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root,recovery/root)

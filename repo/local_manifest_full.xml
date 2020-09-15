@@ -23,4 +23,10 @@
     <project path="external/mesa3d" remote="lineage-rpi" name="android_external_mesa3d" revision="lineage-17.1"/>
 
     <project path="vendor/microg" name="android_prebuilts_prebuiltapks" remote="omnirom" revision="android-10" />
+    
+    <!-- TWRP -->
+    <!--<remove-project name="platform/bootable/recovery" />
+    <project path="bootable/recovery" name="maxwen/android_bootable_recovery" remote="github" revision="android-10.0" />
+    <remove-project name="android_system_core" />
+    <project path="system/core" name="TeamWin/android_system_core" remote="github" revision="android-10.0" />-->
 </manifest>
