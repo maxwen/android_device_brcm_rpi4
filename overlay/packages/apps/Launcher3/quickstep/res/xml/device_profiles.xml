@@ -24,8 +24,7 @@
         launcher:numFolderRows="5"
         launcher:numFolderColumns="5"
         launcher:numHotseatIcons="7"
-        launcher:defaultLayoutId="@xml/default_workspace_6x6"
-        launcher:numColumnsAllApps="7" >
+        launcher:defaultLayoutId="@xml/default_workspace_5x5" >
 
         <display-option
             launcher:name="1280x800"

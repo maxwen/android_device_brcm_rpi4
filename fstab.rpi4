@@ -12,11 +12,11 @@
 #/dev/block/mmcblk0p3    /vendor             ext4      ro,barrier=1                                          wait,first_stage_mount
 #/dev/block/sda3         /vendor             ext4      ro,barrier=1                                          wait,first_stage_mount
 
-#/dev/block/mmcblk0p4    /data               ext4      noatime,nosuid,nodev,barrier=1,noauto_da_alloc latemount,wait,check,fileencryption=aes-256-xts
-#/dev/block/sda4         /data               ext4      noatime,nosuid,nodev,barrier=1,noauto_da_alloc latemount,wait,check,fileencryption=aes-256-xts
+#/dev/block/mmcblk0p4    /data               ext4      noatime,nosuid,nodev,nomblk_io_submit latemount,wait,check,quota,fileencryption=aes-256-xts
+#/dev/block/sda4         /data               ext4      noatime,nosuid,nodev,nomblk_io_submit latemount,wait,check,quota,fileencryption=aes-256-xts
 
 # relies on the userdata parition beeing number for or s=named sda4 or mmcblk0p4
-/dev/block/by-name/userdata /data               ext4      noatime,nosuid,nodev,barrier=1,noauto_da_alloc latemount,wait,check,fileencryption=aes-256-xts
+/dev/block/by-name/userdata /data               ext4      noatime,nosuid,nodev,nomblk_io_submit latemount,wait,check,quota,fileencryption=aes-256-xts
 
 # TODO - for USB boot this should ignore the boot one
 /devices/platform/scb/*.pcie/*/*/*/usb*    auto     auto    defaults                                        voldmanaged=usb:auto,encryptable=userdata

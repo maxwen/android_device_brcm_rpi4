@@ -64,7 +64,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
-    android.hardware.gatekeeper@1.0-service
+    android.hardware.gatekeeper@1.0-service.software
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -72,7 +72,7 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-service
 
 # camera
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-external-service.rpi4
 
 PRODUCT_PACKAGES += \
@@ -84,6 +84,11 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl \
     android.hardware.gnss@1.0-service
 
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.1-service \
+    android.hardware.health@2.1-impl \
+    android.hardware.health.storage@1.0-service
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.host.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.host.xml \
@@ -93,8 +98,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.ethernet.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.ethernet.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
+    frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml
+
+#PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.external.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.external.xml \
-    frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml \
     $(DEVICE_PATH)/external_camera_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/external_camera_config.xml
 
 #PRODUCT_COPY_FILES += \
@@ -159,8 +166,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     audio.primary.rpi4 \
     memtrack.rpi4 \
-    gatekeeper.rpi4 \
     gps.rpi4
+
+#PRODUCT_PACKAGES += \
+    gatekeeper.rpi4 \
 
 PRODUCT_PACKAGES += \
     libinit_rpi4
@@ -174,12 +183,17 @@ PRODUCT_PACKAGES += \
     qti_telephony_utils.xml
 
 PRODUCT_PACKAGES += \
-    DeviceParts \
     Terminal
+
+#PRODUCT_PACKAGES += \
+    DeviceParts
 
 PRODUCT_PACKAGES += \
     htop \
     zip
+
+PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
+PRODUCT_SOONG_NAMESPACES += external/mesa3d
 
 # recovery
 # enable when building recoveryimage

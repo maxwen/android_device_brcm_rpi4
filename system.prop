@@ -24,9 +24,11 @@ persist.sys.usb.config=mtp
 # Wifi
 wifi.interface=wlan0
 
-ro.omni.device_bpf_ready=1
+# R
+ro.kernel.ebpf.supported=true
 
-ro.apex.updatable=true
+# DONT ADD THIS
+#ro.apex.updatable=true
 
 # Audio
 # card 0 = hdmi
