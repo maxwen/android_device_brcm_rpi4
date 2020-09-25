@@ -1,3 +1,5 @@
 genfscon sysfs /devices/platform/v3dbus/fec00000.v3d/uevent u:object_r:sysfs_gpu:s0
 genfscon sysfs /devices/platform/gpu/uevent u:object_r:sysfs_gpu:s0
 genfscon sysfs /firmware/devicetree/base/serial-number u:object_r:sysfs_dt_firmware_android:s0
+genfscon sysfs /devices/platform/scb/fd500000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/wakeup/wakeup0/event_count u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/scb/fd500000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/wakeup/wakeup0 u:object_r:sysfs_wakeup:s0
