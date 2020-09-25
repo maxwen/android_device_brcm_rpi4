@@ -183,10 +183,8 @@ PRODUCT_PACKAGES += \
     qti_telephony_utils.xml
 
 PRODUCT_PACKAGES += \
+    DeviceParts \
     Terminal
-
-#PRODUCT_PACKAGES += \
-    DeviceParts
 
 PRODUCT_PACKAGES += \
     htop \

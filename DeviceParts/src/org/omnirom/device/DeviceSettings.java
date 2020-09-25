@@ -28,6 +28,7 @@ import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
 import android.provider.Settings;
+import android.view.Display;
 import android.view.View;
 import android.view.IWindowManager;
 import android.view.Surface;
@@ -66,22 +67,22 @@ public class DeviceSettings extends PreferenceFragment implements
             try {
                 if (rotationLockValue == 0) {
                     mWindowManager.thawRotation();
-                    mWindowManager.setRotateForApp(0);
+                    mWindowManager.setFixedToUserRotation(Display.DEFAULT_DISPLAY, 0);
                     Settings.System.putInt(getContext().getContentResolver(),
                             Settings.System.ACCELEROMETER_ROTATION, 0);
                 } else if (rotationLockValue == 1) {
                     mWindowManager.freezeRotation(Surface.ROTATION_0);
-                    mWindowManager.setRotateForApp(2);
+                    mWindowManager.setFixedToUserRotation(Display.DEFAULT_DISPLAY, 2);
                     Settings.System.putInt(getContext().getContentResolver(),
                             Settings.System.ACCELEROMETER_ROTATION, 1);
                 } else if (rotationLockValue == 2) {
                     mWindowManager.freezeRotation(Surface.ROTATION_270);
-                    mWindowManager.setRotateForApp(2);
+                    mWindowManager.setFixedToUserRotation(Display.DEFAULT_DISPLAY, 2);
                     Settings.System.putInt(getContext().getContentResolver(),
                             Settings.System.ACCELEROMETER_ROTATION, 1);
                 } else if (rotationLockValue == 3) {
                     mWindowManager.freezeRotation(Surface.ROTATION_90);
-                    mWindowManager.setRotateForApp(2);
+                    mWindowManager.setFixedToUserRotation(Display.DEFAULT_DISPLAY, 2);
                     Settings.System.putInt(getContext().getContentResolver(),
                             Settings.System.ACCELEROMETER_ROTATION, 1);
                 }
