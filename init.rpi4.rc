@@ -45,8 +45,8 @@ on boot
     setprop status.battery.level_raw  50
     setprop status.battery.level_scale 9
 
-    setprop service.adb.tcp.port 5555
-    start adbd
+    #setprop service.adb.tcp.port 5555
+    #start adbd
 
 on property:ro.revision=*
     start btuart
