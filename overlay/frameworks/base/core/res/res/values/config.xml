@@ -185,4 +185,9 @@
     <!-- Full qualified name of the class that implements
         com.android.internal.os.DeviceKeyHandler interface. -->
     <string name="config_deviceKeyHandlerClass" translatable="false">org.omnirom.device.KeyHandler</string>
+
+    <!-- gestures -->
+    <bool name="config_volumeHushGestureEnabled">false</bool>
+
+    <bool name="config_cameraDoubleTapPowerGestureEnabled">false</bool>
 </resources>

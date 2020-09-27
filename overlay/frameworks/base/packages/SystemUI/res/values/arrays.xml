@@ -17,7 +17,7 @@
  */
 -->
 <resources>
-    <string-array name="nav_bar_layouts_values_new" translatable="false">
+    <string-array name="nav_bar_layouts_values" translatable="false">
         <item>default</item>
         <item>left;volup,voldown,back[120A],home[120A],recent[120A],power;right</item>
         <item>left,back[120A],home[120A],recent[120A],volup,voldown,power,right;space;space</item>
