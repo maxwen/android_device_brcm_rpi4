@@ -26,7 +26,7 @@ $(call inherit-product, vendor/omni/config/common_tablet.mk)
 $(call inherit-product, device/brcm/rpi4/device.mk)
 
 # Boot animation
-TARGET_BOOTANIMATION_SIZE := 1080p
+TARGET_BOOTANIMATION_SIZE := 720p
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := rpi4
