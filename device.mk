@@ -183,8 +183,10 @@ PRODUCT_PACKAGES += \
     qti_telephony_utils.xml
 
 PRODUCT_PACKAGES += \
+    Provision \
     DeviceParts \
-    Terminal
+    Terminal \
+    webview
 
 PRODUCT_PACKAGES += \
     htop \

@@ -3,7 +3,7 @@
     "remote": "github",
     "repository": "maxwen/android_kernel_brcm_arpi",
     "target_path": "kernel/brcm/arpi",
-    "revision": "android-10"
+    "revision": "android-11"
   },
   {
     "remote": "github",
@@ -15,13 +15,13 @@
     "remote": "github",
     "repository": "maxwen/proprietary_vendor_brcm",
     "target_path": "vendor/brcm",
-    "revision": "android-10"
+    "revision": "android-11"
   },
   {
     "remote": "github",
     "repository": "maxwen/android_external_gbm_gralloc",
     "target_path": "external/gbm_gralloc",
-    "revision": "android-10"
+    "revision": "android-11"
   },
   {
     "remote": "github",
@@ -47,14 +47,17 @@
   {
     "remote": "github",
     "override": "platform/external/mesa3d",
-    "repository": "lineage-rpi/android_external_mesa3d",
+    "repository": "maxwen/android_external_mesa3d",
     "target_path": "external/mesa3d",
-    "revision": "lineage-17.1"
+    "revision": "android-11"
   },
   {
-    "remove": "android_packages_apps_Provision"
+    "remove": "platform/packages/apps/Provision"
   },
   {
     "remove": "platform/packages/apps/Camera2"
+  },
+  {
+    "remove": "android_packages_apps_OmniChromium"
   }
 ]
