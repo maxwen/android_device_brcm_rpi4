@@ -1,6 +1,5 @@
 <resources>
     <bool name="config_largeHeap">true</bool>
     <bool name="is_large_tablet">true</bool>
-    <bool name="allow_rotation">false</bool>
     <bool name="hotseat_transpose_layout_with_orientation">false</bool>
 </resources>
