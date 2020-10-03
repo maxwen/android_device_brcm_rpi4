@@ -108,3 +108,17 @@ void vendor_create_device_symlinks(const Uevent& uevent, std::vector<std::string
 }
 }
 }
+
+bool vendor_vold_add_device(std::string devName)
+{
+    LOG(INFO) << "vendor_vold_add_device: device " << devName;
+
+    std::string rootDev = android::base::GetProperty("dev.mnt.blk.root", "");
+    if (!rootDev.empty()) {
+        if (rootDev.find(devName) != std::string::npos) {
+            LOG(INFO) << "VolumeManager: skip dev = " << devName << " it is the boot device";
+            return false;
+        }
+    }
+    return true;
+}
