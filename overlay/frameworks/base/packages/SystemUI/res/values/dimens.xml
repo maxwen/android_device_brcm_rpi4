@@ -19,10 +19,13 @@
     <!-- 12sp -->
     <dimen name="qs_tile_text_size">13sp</dimen>
     
-    <!-- the padding on the start of the statusbar -->
-    <dimen name="status_bar_padding_start">16dp</dimen>
-    <!-- the padding on the end of the statusbar -->
-    <dimen name="status_bar_padding_end">16dp</dimen>
+    <!-- 0dp -->
+    <dimen name="status_bar_padding_start">10dp</dimen>
+
+    <!-- 0dp -->
+    <dimen name="status_bar_padding_end">10dp</dimen>
     
-    <dimen name="qs_footer_height">40dp</dimen>
+    <!-- 2dp -->
+    <dimen name="qs_footer_margin">10dp</dimen>
+
 </resources>
