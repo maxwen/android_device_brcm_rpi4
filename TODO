@@ -10,6 +10,7 @@ TODO:
 -kernel cmdline option for default audio device (custom init sets property then)
 -kernel cmdline option for default gps device (custom init sets property then)
 -consider what to do with always on (ambient) display
--support usb cameras - preview works capture not
+-support usb cameras - preview works capture not (v3d_bo_map_unsynchronized)
 -screen distortion on higher resolutions (seems to be on hdmi 1 only - maybe my device port is broken)
 -check why GPT devices wont boot from USB
+-video playback - lets start easy with even a simple screen record (v3d_bo_map_unsynchronized)
