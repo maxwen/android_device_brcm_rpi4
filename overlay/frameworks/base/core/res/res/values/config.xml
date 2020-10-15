@@ -190,4 +190,12 @@
     <bool name="config_volumeHushGestureEnabled">false</bool>
 
     <bool name="config_cameraDoubleTapPowerGestureEnabled">false</bool>
+
+    <string-array translatable="false" name="config_globalActionsList">
+        <item>lockdown</item>
+        <item>power</item>
+        <item>restart</item>
+        <item>logout</item>
+        <item>screenshot</item>
+    </string-array>
 </resources>
