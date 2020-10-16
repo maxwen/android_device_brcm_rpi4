@@ -35,3 +35,9 @@ ro.kernel.ebpf.supported=true
 # card 1 = headphone jack
 audio.pcm.card=0
 audio.pcm.device=0
+
+# we are not caf
+ro.vendor.qti.servicetracker.disable=true
+
+# no flickering for now
+debug.sf.disable_hwc_overlays=1
