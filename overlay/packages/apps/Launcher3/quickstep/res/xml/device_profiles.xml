@@ -32,7 +32,7 @@
             launcher:name="1280x800"
             launcher:minWidthDps="500"
             launcher:minHeightDps="900"
-            launcher:iconImageSize="48"
+            launcher:iconImageSize="54"
             launcher:iconTextSize="15"
             launcher:canBeDefault="true" />
 
@@ -40,7 +40,7 @@
             launcher:name="1920x1080"
             launcher:minWidthDps="900"
             launcher:minHeightDps="1500"
-            launcher:iconImageSize="48"
+            launcher:iconImageSize="54"
             launcher:iconTextSize="18"
             launcher:canBeDefault="true" />
     </grid-option>
@@ -60,7 +60,7 @@
             launcher:name="1280x800"
             launcher:minWidthDps="500"
             launcher:minHeightDps="900"
-            launcher:iconImageSize="48"
+            launcher:iconImageSize="54"
             launcher:iconTextSize="15"
             launcher:canBeDefault="true" />
 
@@ -68,7 +68,7 @@
             launcher:name="1920x1080"
             launcher:minWidthDps="900"
             launcher:minHeightDps="1500"
-            launcher:iconImageSize="48"
+            launcher:iconImageSize="54"
             launcher:iconTextSize="18"
             launcher:canBeDefault="true" />
     </grid-option>
@@ -88,7 +88,7 @@
             launcher:name="1280x800"
             launcher:minWidthDps="500"
             launcher:minHeightDps="900"
-            launcher:iconImageSize="48"
+            launcher:iconImageSize="54"
             launcher:iconTextSize="15"
             launcher:canBeDefault="true" />
 
@@ -96,7 +96,7 @@
             launcher:name="1920x1080"
             launcher:minWidthDps="900"
             launcher:minHeightDps="1500"
-            launcher:iconImageSize="48"
+            launcher:iconImageSize="54"
             launcher:iconTextSize="18"
             launcher:canBeDefault="true" />
     </grid-option>
@@ -116,7 +116,7 @@
             launcher:name="1280x800"
             launcher:minWidthDps="500"
             launcher:minHeightDps="900"
-            launcher:iconImageSize="48"
+            launcher:iconImageSize="54"
             launcher:iconTextSize="15"
             launcher:canBeDefault="true" />
 
@@ -124,7 +124,7 @@
             launcher:name="1920x1080"
             launcher:minWidthDps="900"
             launcher:minHeightDps="1500"
-            launcher:iconImageSize="48"
+            launcher:iconImageSize="54"
             launcher:iconTextSize="18"
             launcher:canBeDefault="true" />
     </grid-option>
@@ -144,7 +144,7 @@
             launcher:name="1280x800"
             launcher:minWidthDps="500"
             launcher:minHeightDps="900"
-            launcher:iconImageSize="48"
+            launcher:iconImageSize="54"
             launcher:iconTextSize="15"
             launcher:canBeDefault="true" />
 
@@ -152,7 +152,7 @@
             launcher:name="1920x1080"
             launcher:minWidthDps="900"
             launcher:minHeightDps="1500"
-            launcher:iconImageSize="48"
+            launcher:iconImageSize="54"
             launcher:iconTextSize="18"
             launcher:canBeDefault="true" />
     </grid-option>
@@ -172,7 +172,7 @@
             launcher:name="1280x800"
             launcher:minWidthDps="500"
             launcher:minHeightDps="900"
-            launcher:iconImageSize="48"
+            launcher:iconImageSize="54"
             launcher:iconTextSize="15"
             launcher:canBeDefault="true" />
 
@@ -180,7 +180,7 @@
             launcher:name="1920x1080"
             launcher:minWidthDps="900"
             launcher:minHeightDps="1500"
-            launcher:iconImageSize="48"
+            launcher:iconImageSize="54"
             launcher:iconTextSize="18"
             launcher:canBeDefault="true" />
     </grid-option>
@@ -200,7 +200,7 @@
             launcher:name="1280x800"
             launcher:minWidthDps="500"
             launcher:minHeightDps="900"
-            launcher:iconImageSize="48"
+            launcher:iconImageSize="54"
             launcher:iconTextSize="15"
             launcher:canBeDefault="true" />
 
@@ -208,7 +208,7 @@
             launcher:name="1920x1080"
             launcher:minWidthDps="900"
             launcher:minHeightDps="1500"
-            launcher:iconImageSize="48"
+            launcher:iconImageSize="54"
             launcher:iconTextSize="18"
             launcher:canBeDefault="true" />
     </grid-option>
