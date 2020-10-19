@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-/*package org.omnirom.device;
+package org.omnirom.device;
 
 import android.app.ActivityManagerNative;
 import android.app.NotificationManager;
@@ -72,9 +72,9 @@ public class KeyHandler implements DeviceKeyHandler {
 
     protected final Context mContext;
 
-
     public KeyHandler(Context context) {
         mContext = context;
+        Log.d(TAG, "He is alive");
     }
 
     @Override
@@ -106,4 +106,4 @@ public class KeyHandler implements DeviceKeyHandler {
     public Intent isActivityLaunchEvent(KeyEvent event) {
         return null;
     }
-}*/
+}
