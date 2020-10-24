@@ -30,4 +30,6 @@
     <string name="quick_settings_tiles_default" translatable="false">
         wifi,bt,location,airplane,dark,screenrecord
     </string>
+
+    <bool name="config_batteryPresentVisibility">true</bool>
 </resources>
