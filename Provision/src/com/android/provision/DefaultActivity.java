@@ -42,7 +42,7 @@ public class DefaultActivity extends Activity {
 
         // set useful defaults for raspi
         Settings.Secure.putInt(getContentResolver(), "qs_show_brightness", 0);
-        Settings.Secure.putString(getContentResolver(), "icon_blacklist", "rotate,headset,battery");
+        Settings.Secure.putString(getContentResolver(), "icon_blacklist", "rotate,headset");
         // enable always on -> TODO assumes fake charging is set
         Settings.Global.putInt(getContentResolver(), Settings.Global.STAY_ON_WHILE_PLUGGED_IN,
                 BatteryManager.BATTERY_PLUGGED_AC | BatteryManager.BATTERY_PLUGGED_USB
