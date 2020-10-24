@@ -17,6 +17,10 @@
 # Inherit device configuration
 DEVICE_PATH := device/brcm/rpi4
 
+PRODUCT_QUOTA_PROJID := 1
+PRODUCT_PROPERTY_OVERRIDES += external_storage.projid.enabled=1
+PRODUCT_PROPERTY_OVERRIDES += external_storage.sdcardfs.enabled=0
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 

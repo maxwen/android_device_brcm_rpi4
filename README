@@ -61,6 +61,14 @@ userdata      4982784 16777215 11794432  5.6G 83 Linux
 
 THE PARTITION ORDER MUST BE LIKE THIS
 
+Userdata partiton MUST have project quota enabled
+coming from stock the imnage is build with it.
+if you resize or create your own you can enbale using tune2fs
+
+tune2fs -O project,quota <mounted device partition>
+
+# boot order
+
 Switching between booting from sdcard and USB is done in config.txt
 by enabling the needed overlay
 
@@ -77,7 +85,7 @@ You can still mess with the fstab if you want and dont use the overlay
 Note
 
 the files in scripts are what I use to create and update
-feel free to adjust and adpat to your needs if you want
+feel free to adjust and update to your needs if you want
 
 # flash to boot device with e.g. dd
 
