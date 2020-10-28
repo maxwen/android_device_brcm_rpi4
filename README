@@ -61,11 +61,11 @@ userdata      4982784 16777215 11794432  5.6G 83 Linux
 
 THE PARTITION ORDER MUST BE LIKE THIS
 
-Userdata partiton MUST have project quota enabled
-coming from stock the imnage is build with it.
-if you resize or create your own you can enbale using tune2fs
+Starting with android-11 project quotas are mandatory in userdata
+parition. Prebuilt images have it enabled but if you recreate your
+userdata you MUST enable project quotas with e.g.
 
-tune2fs -O project,quota <mounted device partition>
+tune2fs -O project,quota <userdata partition device>
 
 # boot order
 
