@@ -1,4 +1,4 @@
-#!system/bin/sh
+#!/system/bin/sh
 # called from rom
 
 if [ -u $1 ]; then
@@ -33,3 +33,5 @@ elif [ -b "/dev/block/sda1" ]; then
     su root umount /mnt/boot
     #/system/bin/reboot
 fi
+
+exit 1

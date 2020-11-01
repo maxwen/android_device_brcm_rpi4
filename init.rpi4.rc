@@ -40,10 +40,10 @@ on boot
     setprop net.dns2 8.8.4.4
 
     # fake some battery state
-    setprop status.battery.state Slow
-    setprop status.battery.level 5
-    setprop status.battery.level_raw  50
-    setprop status.battery.level_scale 9
+    #setprop status.battery.state Slow
+    #setprop status.battery.level 100
+    #setprop status.battery.level_raw  50
+    #setprop status.battery.level_scale 9
 
     #setprop service.adb.tcp.port 5555
     #start adbd
@@ -64,5 +64,23 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     interface android.hardware.wifi.supplicant@1.3::ISupplicant default
     class main
     socket wpa_wlan0 dgram 660 wifi wifi
+    disabled
+    oneshot
+
+on property:sys.rpi4.boot_mode=recovery
+    start switch_boot_recovery
+
+on property:sys.rpi4.boot_mode=rom
+    start switch_boot_rom
+
+service switch_boot_recovery /vendor/xbin/switch_boot recovery
+    user root
+    group system
+    disabled
+    oneshot
+
+service switch_boot_rom /vendor/xbin/switch_boot rom
+    user root
+    group system
     disabled
     oneshot

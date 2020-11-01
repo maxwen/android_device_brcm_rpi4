@@ -192,9 +192,17 @@ PRODUCT_PACKAGES += \
     htop \
     zip
 
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/scripts/switch_boot.sh:$(TARGET_COPY_OUT_VENDOR)/xbin/switch_boot
+
 PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 PRODUCT_SOONG_NAMESPACES += external/mesa3d
+PRODUCT_SOONG_NAMESPACES += packages/apps/Bluetooth
 
 # recovery
 # enable when building recoveryimage
 #PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root,recovery/root)
+
+#PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/scripts/switch_boot_recovery.sh:recovery/root/sbin/switch_boot_recovery \
+    $(DEVICE_PATH)/scripts/switch_boot_rom.zip:recovery/root/sbin/switch_boot_rom.zip

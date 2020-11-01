@@ -27,3 +27,5 @@ elif [ -b "/dev/block/sda1" ]; then
     umount /boot
     #/system/bin/reboot
 fi
+
+exit 1
