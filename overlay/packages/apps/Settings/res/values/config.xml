@@ -34,4 +34,6 @@
     <!-- Whether top_level_battery should be shown or not. -->
     <bool name="config_show_top_level_battery">false</bool>
 
+    <!-- dont touch encryption status for now -->
+    <bool name="config_show_encryption_and_credentials_encryption_status">false</bool>
 </resources>
