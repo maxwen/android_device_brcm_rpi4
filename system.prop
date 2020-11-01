@@ -41,3 +41,6 @@ sys.vendor.qti.servicetracker.disable=true
 
 # no flickering for now
 debug.sf.disable_hwc_overlays=1
+
+sys.rpi4.boot_mode=rom
+

@@ -26,4 +26,9 @@
         android:title="@string/tuner_nav_bar_system_keys_title"
         android:summary="@string/tuner_nav_bar_system_keys_summary"
         android:defaultValue="false" />-->
+
+    <Preference
+        android:key="boot_mode"
+        android:title="@string/boot_mode_title"
+        android:persistent="false" />
 </PreferenceScreen>

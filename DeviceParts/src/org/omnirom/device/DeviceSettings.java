@@ -23,6 +23,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.ServiceManager;
+import android.os.SystemProperties;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
@@ -40,9 +41,11 @@ public class DeviceSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "DeviceSettings";
     private static final String KEY_ROTATION_LOCK = "rotation_lock";
+    private static final String KEY_BOOT_MODE = "boot_mode";
 
     private IWindowManager mWindowManager;
     private ListPreference mRotationLock;
+    private Preference mBootMode;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -52,10 +55,21 @@ public class DeviceSettings extends PreferenceFragment implements
         mRotationLock = (ListPreference) findPreference(KEY_ROTATION_LOCK);
         mRotationLock.setOnPreferenceChangeListener(this);
         mRotationLock.setSummary(mRotationLock.getEntry());
+        mBootMode = findPreference(KEY_BOOT_MODE);
+        mBootMode.setSummary(getBootMode());
     }
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
+        if (preference == mBootMode) {
+            String bootMode = getBootMode();
+            if (bootMode.equals("rom")) {
+                switchBootMode("recovery");
+            } else {
+                switchBootMode("rom");
+            }
+            mBootMode.setSummary(getBootMode());
+        }
         return super.onPreferenceTreeClick(preference);
     }
 
@@ -92,5 +106,13 @@ public class DeviceSettings extends PreferenceFragment implements
             }
         }
         return true;
+    }
+
+    private void switchBootMode(String mode) {
+        SystemProperties.set("sys.rpi4.boot_mode", mode);
+    }
+
+    private String getBootMode() {
+        return SystemProperties.get("sys.rpi4.boot_mode");
     }
 }

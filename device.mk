@@ -205,4 +205,4 @@ PRODUCT_SOONG_NAMESPACES += packages/apps/Bluetooth
 
 #PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/scripts/switch_boot_recovery.sh:recovery/root/sbin/switch_boot_recovery \
-    $(DEVICE_PATH)/scripts/switch_boot_rom.zip:recovery/root/sbin/switch_boot_rom.zip
+    $(DEVICE_PATH)/scripts/switch_boot_rom.zip:recovery/root/switch_boot_rom.zip
