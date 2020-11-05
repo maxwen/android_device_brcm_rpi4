@@ -5,9 +5,9 @@ Builds as 64bit only so make sure you have propper firmware!
 Refer to http://source.android.com/source/downloading.html
 Refer to https://github.com/omnirom/android
 
-$ repo init -u git://github.com/omnirom/android.git -b android-10
+$ repo init -u git://github.com/omnirom/android.git -b android-11
 
-copy https://github.com/maxwen/android_device_brcm_rpi4/blob/android-10/repo/local_manifest.xml .repo/local_manifests/
+copy https://github.com/maxwen/android_device_brcm_rpi4/blob/android-11/repo/local_manifest.xml .repo/local_manifests/
 
 If you are not building based on omni to use roomservice check local_manifest_full.xml
 
@@ -15,9 +15,6 @@ If you want to use the contents of omni-private.xml please check
 https://github.com/omnirom/android/README and head over to send us a short
 email notice. Otherwise you can simple remove the include of that xml
 file and build without
-
-This uses some repos from https://github.com/lineage-rpi
-please check omni.dependencies for the complete list
 
 $ repo sync
 
@@ -34,13 +31,7 @@ $ export PRODUCT_EXCLUDE_EXTRA_PACKAGES=true
 $ source build/envsetup.sh
 $ lunch omni_rpi4-userdebug
 
-# add any not yet merged changes and fixes specific for rpi4
-
-Refer to https://gerrit.omnirom.org/q/topic:raspi_bits
-
 # build
-
-make bootimage systemimage vendorimage
 
 Use -j[n] option with make, if build host has a good number of CPU cores.
 
@@ -88,11 +79,3 @@ the files in scripts are what I use to create and update
 feel free to adjust and update to your needs if you want
 
 # flash to boot device with e.g. dd
-
-Configurations
-
-Change audio output from hdmi to headphone jack
-system.prop change audio.pcm.card=0 -> audio.pcm.card=1
-
-Change default config.txt
-vendor/brcm/rpi4/proprietary/boot/config.txt
