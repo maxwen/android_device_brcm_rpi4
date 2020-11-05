@@ -24,4 +24,9 @@
     <string name="tuner_nav_bar_system_keys_title">Enable system keys suppprt</string>
     <string name="tuner_nav_bar_system_keys_summary">Allow to emulate power, volume up and volume down keys</string>
     <string name="boot_mode_title">Boot mode</string>
+    <string name="audio_card_title">Audio output - reboot required</string>
+    <string name="audio_card_hdmi">HDMI</string>
+    <string name="audio_card_headphone_jack">Headphone Jack</string>
+    <string name="boot_mode_rom">ROM</string>
+    <string name="boot_mode_recovery">Recovery</string>
 </resources>

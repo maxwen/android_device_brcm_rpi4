@@ -21,14 +21,26 @@
         android:entryValues="@array/rotation_lock_values"
         android:defaultValue="0" />
 
+    <ListPreference
+        android:key="audio_card"
+        android:title="@string/audio_card_title"
+        android:entries="@array/audio_card_entries"
+        android:entryValues="@array/audio_card_values"
+        android:persistent="false"
+        android:defaultValue="0" />
+
     <!--<org.omnirom.omnilib.preference.SecureSettingSwitchPreference
         android:key="sysui_nav_bar_system_keys"
         android:title="@string/tuner_nav_bar_system_keys_title"
         android:summary="@string/tuner_nav_bar_system_keys_summary"
         android:defaultValue="false" />-->
 
-    <Preference
+    <ListPreference
         android:key="boot_mode"
         android:title="@string/boot_mode_title"
-        android:persistent="false" />
+        android:entries="@array/boot_mode_entries"
+        android:entryValues="@array/boot_mode_values"
+        android:persistent="false"
+        android:defaultValue="rom" />
+
 </PreferenceScreen>

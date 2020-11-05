@@ -33,6 +33,7 @@ ro.kernel.ebpf.supported=true
 # Audio
 # card 0 = hdmi
 # card 1 = headphone jack
+# can be overwrittem by persist.audio.pcm.card - used in DeviceParts
 audio.pcm.card=0
 audio.pcm.device=0
 
@@ -42,5 +43,6 @@ sys.vendor.qti.servicetracker.disable=true
 # no flickering for now
 debug.sf.disable_hwc_overlays=1
 
+# used in DeviceParts
 sys.rpi4.boot_mode=rom
 

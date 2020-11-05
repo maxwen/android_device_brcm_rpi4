@@ -42,10 +42,16 @@ public class DeviceSettings extends PreferenceFragment implements
     private static final String TAG = "DeviceSettings";
     private static final String KEY_ROTATION_LOCK = "rotation_lock";
     private static final String KEY_BOOT_MODE = "boot_mode";
+    private static final String KEY_AUDIO_CARD = "audio_card";
+
+    private static final String BOOT_MODE_PROPERTY = "sys.rpi4.boot_mode";
+    private static final String AUDIO_CARD_PROPERTY = "audio.pcm.card";
+    private static final String AUDIO_CARD_OVERRIDE_PROPERTY = "persist.audio.pcm.card";
 
     private IWindowManager mWindowManager;
     private ListPreference mRotationLock;
-    private Preference mBootMode;
+    private ListPreference mBootMode;
+    private ListPreference mAudioCard;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -55,21 +61,23 @@ public class DeviceSettings extends PreferenceFragment implements
         mRotationLock = (ListPreference) findPreference(KEY_ROTATION_LOCK);
         mRotationLock.setOnPreferenceChangeListener(this);
         mRotationLock.setSummary(mRotationLock.getEntry());
-        mBootMode = findPreference(KEY_BOOT_MODE);
-        mBootMode.setSummary(getBootMode());
+
+        mBootMode = (ListPreference) findPreference(KEY_BOOT_MODE);
+        mBootMode.setOnPreferenceChangeListener(this);
+        String bootMode = getBootMode();
+        mBootMode.setValue(bootMode);
+        mBootMode.setSummary(mBootMode.getEntry());
+
+        mAudioCard = (ListPreference) findPreference(KEY_AUDIO_CARD);
+        mAudioCard.setOnPreferenceChangeListener(this);
+        String card = SystemProperties.get(AUDIO_CARD_OVERRIDE_PROPERTY,
+                SystemProperties.get(AUDIO_CARD_PROPERTY, ""));
+        mAudioCard.setValue(card);
+        mAudioCard.setSummary(mAudioCard.getEntry());
     }
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
-        if (preference == mBootMode) {
-            String bootMode = getBootMode();
-            if (bootMode.equals("rom")) {
-                switchBootMode("recovery");
-            } else {
-                switchBootMode("rom");
-            }
-            mBootMode.setSummary(getBootMode());
-        }
         return super.onPreferenceTreeClick(preference);
     }
 
@@ -104,15 +112,23 @@ public class DeviceSettings extends PreferenceFragment implements
             } catch (RemoteException e){
                 Log.e(TAG, "freezeRotation", e);
             }
+        } else if (preference == mAudioCard) {
+            String value = (String) newValue;
+            SystemProperties.set(AUDIO_CARD_OVERRIDE_PROPERTY, value);
+            mAudioCard.setSummary(mAudioCard.getEntries()[Integer.valueOf(value)]);
+        } else if (preference == mBootMode) {
+            String value = (String) newValue;
+            switchBootMode(value);
+            mBootMode.setSummary(mBootMode.getEntries()[mBootMode.findIndexOfValue(value)]);
         }
         return true;
     }
 
     private void switchBootMode(String mode) {
-        SystemProperties.set("sys.rpi4.boot_mode", mode);
+        SystemProperties.set(BOOT_MODE_PROPERTY, mode);
     }
 
     private String getBootMode() {
-        return SystemProperties.get("sys.rpi4.boot_mode");
+        return SystemProperties.get(BOOT_MODE_PROPERTY);
     }
 }

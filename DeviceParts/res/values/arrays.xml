@@ -27,4 +27,24 @@
         <item>2</item>
         <item>3</item>
     </string-array>
+
+    <string-array name="audio_card_entries" translatable="false">
+        <item>@string/audio_card_hdmi</item>
+        <item>@string/audio_card_headphone_jack</item>
+    </string-array>
+
+    <string-array name="audio_card_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="boot_mode_entries" translatable="false">
+        <item>@string/boot_mode_rom</item>
+        <item>@string/boot_mode_recovery</item>
+    </string-array>
+
+    <string-array name="boot_mode_values" translatable="false">
+        <item>rom</item>
+        <item>recovery</item>
+    </string-array>
 </resources>

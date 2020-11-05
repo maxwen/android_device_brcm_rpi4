@@ -46,7 +46,7 @@ static T get(const std::string& path, const T& def) {
     return file.fail() ? def : result;
 }
 
-void property_override(const std::string& name, const std::string& value)
+static void property_override(const std::string& name, const std::string& value)
 {
     size_t valuelen = value.size();
 
@@ -63,7 +63,7 @@ void property_override(const std::string& name, const std::string& value)
     }
 }
 
-void set_revision_property() {
+static void set_revision_property() {
     std::string cpuinfo;
     android::base::ReadFileToString("/proc/cpuinfo", &cpuinfo);
 
@@ -80,6 +80,13 @@ void set_revision_property() {
     }
 }
 
+static void set_audio_card_property() {
+    std::string card = android::base::GetProperty("persist.audio.pcm.card", "");
+    if (!card.empty()) {
+        property_override("audio.pcm.card", card);
+    }
+}
+
 void vendor_load_properties()
 {
     // is done from kernel now
@@ -87,6 +94,8 @@ void vendor_load_properties()
     //property_override("ro.serialno", serial);
     
     set_revision_property();
+
+    set_audio_card_property();
 }
 
 void vendor_create_device_symlinks(const Uevent& uevent, std::vector<std::string>& links)
