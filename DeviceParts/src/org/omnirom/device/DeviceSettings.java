@@ -107,6 +107,11 @@ public class DeviceSettings extends PreferenceFragment implements
                     mWindowManager.setFixedToUserRotation(Display.DEFAULT_DISPLAY, 2);
                     Settings.System.putInt(getContext().getContentResolver(),
                             Settings.System.ACCELEROMETER_ROTATION, 1);
+                } else if (rotationLockValue == 4) {
+                    mWindowManager.freezeRotation(Surface.ROTATION_180);
+                    mWindowManager.setFixedToUserRotation(Display.DEFAULT_DISPLAY, 2);
+                    Settings.System.putInt(getContext().getContentResolver(),
+                            Settings.System.ACCELEROMETER_ROTATION, 1);
                 }
                 mRotationLock.setSummary(mRotationLock.getEntries()[rotationLockValue]);
             } catch (RemoteException e){

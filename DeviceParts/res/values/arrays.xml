@@ -19,6 +19,7 @@
         <item>@string/rotation_lock_landscape</item>
         <item>@string/rotation_lock_portrait</item>
         <item>@string/rotation_lock_portrait_reverse</item>
+        <item>@string/rotation_lock_landscape_reverse</item>
     </string-array>
 
     <string-array name="rotation_lock_values" translatable="false">
@@ -26,6 +27,7 @@
         <item>1</item>
         <item>2</item>
         <item>3</item>
+        <item>4</item>
     </string-array>
 
     <string-array name="audio_card_entries" translatable="false">
