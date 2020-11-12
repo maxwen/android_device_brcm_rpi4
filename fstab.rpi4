@@ -17,7 +17,7 @@
 #/dev/block/sda4         /data               ext4      noatime,nosuid,nodev,nomblk_io_submit latemount,wait,check,quota
 
 # TODO fileencryption=aes-256-xts
-# relies on the userdata parition beeing number for or s=named sda4 or mmcblk0p4
+# relies on the userdata parition beeing number 4 or named sda4 or mmcblk0p4
 /dev/block/by-name/userdata /data               ext4      noatime,nosuid,nodev,nomblk_io_submit latemount,wait,check,quota
 
 /devices/platform/scb/*.pcie/*/*/*/usb*    auto     auto    defaults                                        voldmanaged=usb:auto
