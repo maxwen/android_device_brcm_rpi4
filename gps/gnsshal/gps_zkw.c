@@ -1,5 +1,5 @@
 #define LOG_TAG  "gps_zkw"
-#define LOG_NDEBUG 0
+//#define LOG_NDEBUG 0
 
 #include <errno.h>
 #include <pthread.h>
@@ -45,8 +45,8 @@
 #define GPS_CHANNEL_NAME        "/dev/ttyACM0"
 #define TTY_BAUD                B115200   // B115200
 
-#define  GPS_DEBUG  1
-#define  NEMA_DEBUG 1   /*the flag works if GPS_DEBUG is defined*/
+#define  GPS_DEBUG  0
+#define  NEMA_DEBUG 0   /*the flag works if GPS_DEBUG is defined*/
 #if GPS_DEBUG
 #define TRC(f)      ALOGD("%s", __func__)
 #define ERR(f, ...) ALOGE("%s: line = %d, " f, __func__, __LINE__, ##__VA_ARGS__)
@@ -1351,7 +1351,7 @@ const GpsInterface* gps__get_gps_interface(struct gps_device_t* dev)
 
 static int open_gps(const struct hw_module_t* module, char const* name,
                     struct hw_device_t** device) {
-        DBG("open_gps HAL 1\n");
+        ALOGI("open_gps HAL\n");
         struct gps_device_t *dev = malloc(sizeof(struct gps_device_t));
         if (dev != NULL) {
                 memset(dev, 0, sizeof(*dev));
@@ -1360,9 +1360,7 @@ static int open_gps(const struct hw_module_t* module, char const* name,
                 dev->common.version = 0;
                 dev->common.module = (struct hw_module_t*)module;
                 //   dev->common.close = (int (*)(struct hw_device_t*))close_lights;
-                DBG("open_gps HAL 2\n");
                 dev->get_gps_interface = gps__get_gps_interface;
-                DBG("open_gps HAL 3\n");
                 *device = (struct hw_device_t*)dev;
         } else {
                 DBG("malloc failed dev = NULL!\n");
