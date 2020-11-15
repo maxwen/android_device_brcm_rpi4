@@ -1,0 +1,15 @@
+cc_library_shared {
+    name: "gps.rpi4",
+    relative_install_path: "hw",
+    proprietary: true,
+    srcs: ["gps_zkw.c"],
+    header_libs: ["libhardware_headers"],
+    shared_libs: [
+        "liblog",
+        "libcutils",
+        "libhardware",
+        "libc",
+        "libutils"
+    ],
+    cflags: ["-Wall", "-Werror", "-Wno-unused-parameter", "-Wno-unused-variable", "-Wno-format", "-Wno-unused-function"],
+}
