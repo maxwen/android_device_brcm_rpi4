@@ -18,6 +18,12 @@ on post-fs-data
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
 
+    # gpio
+    chown system system /dev/gpiochip0
+    chmod 0666 /dev/gpiochip0
+    chown system system /dev/gpiochip1
+    chmod 0666 /dev/gpiochip1
+
     # Set indication (checked by vold) that we have finished this action
     setprop vold.post_fs_data_done 1
 

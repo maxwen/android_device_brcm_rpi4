@@ -4,6 +4,8 @@
 /dev/dri/renderD128             u:object_r:gpu_device:s0
 /dev/rfkill                     u:object_r:rfkill_device:s0
 /dev/ttyAMA0                    u:object_r:hci_attach_dev:s0
+/dev/gpiochip0                  u:object_r:gpio_dev:s0
+/dev/gpiochip1                  u:object_r:gpio_dev:s0
 
 /vendor/bin/hw/android\.hardware\.gatekeeper@1\.0-service.software        u:object_r:hal_gatekeeper_default_exec:s0
 /vendor/bin/hw/android\.hardware\.graphics\.allocator@2\.0-service\.rpi4  u:object_r:hal_graphics_allocator_default_exec:s0

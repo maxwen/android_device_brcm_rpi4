@@ -1,2 +1,3 @@
 allow system_app selinuxfs:file r_file_perms;
 gpu_access(system_app)
+allow system_app gpio_dev:chr_file rw_file_perms;

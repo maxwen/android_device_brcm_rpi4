@@ -192,6 +192,14 @@ PRODUCT_PACKAGES += \
     htop \
     zip
 
+PRODUCT_PACKAGES += \
+    gpiodetect \
+    gpiofind \
+    gpioget \
+    gpioinfo \
+    gpiomon \
+    gpioset
+
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/scripts/switch_boot.sh:$(TARGET_COPY_OUT_VENDOR)/xbin/switch_boot
 

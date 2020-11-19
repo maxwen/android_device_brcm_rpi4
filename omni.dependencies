@@ -25,6 +25,12 @@
   },
   {
     "remote": "github",
+    "repository": "maxwen/android_external_libgpiod",
+    "target_path": "external/libgpiod",
+    "revision": "android-11"
+  },
+  {
+    "remote": "github",
     "override": "platform/external/drm_hwcomposer",
     "repository": "lineage-rpi/android_external_drm_hwcomposer",
     "target_path": "external/drm_hwcomposer",
