@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<bool name="secondary_device">true</bool>
+	<bool name="download_only_device">true</bool>
+
+</resources>
