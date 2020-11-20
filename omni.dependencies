@@ -3,7 +3,7 @@
     "remote": "github",
     "repository": "maxwen/android_kernel_brcm_arpi",
     "target_path": "kernel/brcm/arpi",
-    "revision": "android-11"
+    "revision": "android-11-5.4-lts"
   },
   {
     "remote": "github",
@@ -55,7 +55,7 @@
     "override": "platform/external/mesa3d",
     "repository": "maxwen/android_external_mesa3d",
     "target_path": "external/mesa3d",
-    "revision": "android-11"
+    "revision": "android-11-v20.2"
   },
   {
     "remove": "platform/packages/apps/Provision"
