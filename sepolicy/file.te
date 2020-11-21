@@ -1,2 +1,5 @@
 type sysfs_gpu, fs_type, sysfs_type;
 type mediadrm_vendor_data_file, file_type, data_file_type;
+type sysfs_gpio, fs_type, sysfs_type;
+type gpiod_data_file, file_type, data_file_type, core_data_file_type;
+

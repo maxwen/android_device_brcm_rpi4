@@ -30,4 +30,6 @@
 
 /data/vendor/mediadrm(/.*)?            u:object_r:mediadrm_vendor_data_file:s0
 
-/vendor/xbin/switch_boot u:object_r:switch_boot_exec:s0
+/system/xbin/switch_boot u:object_r:switch_boot_exec:s0
+/system/bin/gpiod u:object_r:gpiod_exec:s0
+/data/gpio(/.*)? u:object_r:gpiod_data_file:s0

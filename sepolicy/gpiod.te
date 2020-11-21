@@ -1,0 +1,17 @@
+# gpiod service
+type gpiod, domain;
+type gpiod_exec, exec_type, file_type, system_file_type;
+typeattribute gpiod coredomain;
+
+init_daemon_domain(gpiod)
+
+allow gpiod gpio_dev:chr_file rw_file_perms;
+allow gpiod sysfs_gpio:file r_file_perms;
+allow gpiod device:dir r_file_perms;
+allow gpiod gpiod_data_file:file r_file_perms;
+allow gpiod gpiod_data_file:dir search;
+allow gpiod shell_exec:file rx_file_perms;
+allow gpiod toolbox_exec:file rx_file_perms;
+allow gpiod system_file:file execute_no_trans;
+allow gpiod system_server:binder { call transfer };
+allow gpiod servicemanager:binder { call };

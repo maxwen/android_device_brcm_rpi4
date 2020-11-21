@@ -198,10 +198,11 @@ PRODUCT_PACKAGES += \
     gpioget \
     gpioinfo \
     gpiomon \
-    gpioset
+    gpioset \
+    gpiod
 
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/scripts/switch_boot.sh:$(TARGET_COPY_OUT_VENDOR)/xbin/switch_boot
+    $(DEVICE_PATH)/scripts/switch_boot.sh:$(TARGET_COPY_OUT_SYSTEM)/xbin/switch_boot
 
 PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 PRODUCT_SOONG_NAMESPACES += external/mesa3d

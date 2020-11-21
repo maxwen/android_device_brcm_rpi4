@@ -1,5 +1,10 @@
 # switch_boot service
 type switch_boot, domain;
-type switch_boot_exec, exec_type, file_type, vendor_file_type;
+type switch_boot_exec, exec_type, file_type, system_file_type;
+typeattribute switch_boot coredomain;
 
 init_daemon_domain(switch_boot)
+
+allow switch_boot shell_exec:file rx_file_perms;
+# TODO
+#allow switch_boot su_exec:file rx_file_perms;

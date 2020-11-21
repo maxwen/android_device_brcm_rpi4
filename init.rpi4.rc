@@ -23,6 +23,7 @@ on post-fs-data
     chmod 0666 /dev/gpiochip0
     chown system system /dev/gpiochip1
     chmod 0666 /dev/gpiochip1
+    mkdir /data/gpio 0777 system system
 
     # Set indication (checked by vold) that we have finished this action
     setprop vold.post_fs_data_done 1
@@ -79,13 +80,23 @@ on property:sys.rpi4.boot_mode=recovery
 on property:sys.rpi4.boot_mode=rom
     start switch_boot_rom
 
-service switch_boot_recovery /vendor/xbin/switch_boot recovery
+service switch_boot_recovery /system/xbin/switch_boot recovery
     user root
     group system
     disabled
     oneshot
 
-service switch_boot_rom /vendor/xbin/switch_boot rom
+service switch_boot_rom /system/xbin/switch_boot rom
+    user root
+    group system
+    disabled
+    oneshot
+
+on property:persist.rpio4.gpiod.lines=* && property:sys.boot_completed=1
+    stop gpiod    
+    start gpiod
+
+service gpiod /system/bin/gpiod -r gpiochip0 ${persist.rpio4.gpiod.lines}
     user root
     group system
     disabled
