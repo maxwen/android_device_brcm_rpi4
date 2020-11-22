@@ -92,11 +92,11 @@ service switch_boot_rom /system/xbin/switch_boot rom
     disabled
     oneshot
 
-on property:persist.rpio4.gpiod.lines=* && property:sys.boot_completed=1
+on property:persist.rpi4.gpiod.options=* && property:persist.rpi4.gpiod.lines=* && property:sys.boot_completed=1
     stop gpiod    
     start gpiod
 
-service gpiod /system/bin/gpiod -r gpiochip0 ${persist.rpio4.gpiod.lines}
+service gpiod /system/bin/gpiod ${persist.rpi4.gpiod.options} ${persist.rpi4.gpiod.lines}
     user root
     group system
     disabled
