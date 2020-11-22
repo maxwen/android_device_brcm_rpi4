@@ -14,17 +14,6 @@ on post-fs-data
     mkdir /data/vendor/wifi/wpa 0770 wifi wifi
     mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
 
-    chmod 0660 /sys/class/rfkill/rfkill0/state
-    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
-    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
-
-    # gpio
-    chown system system /dev/gpiochip0
-    chmod 0666 /dev/gpiochip0
-    chown system system /dev/gpiochip1
-    chmod 0666 /dev/gpiochip1
-    mkdir /data/gpio 0777 system system
-
     # Set indication (checked by vold) that we have finished this action
     setprop vold.post_fs_data_done 1
 
@@ -71,33 +60,5 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     interface android.hardware.wifi.supplicant@1.3::ISupplicant default
     class main
     socket wpa_wlan0 dgram 660 wifi wifi
-    disabled
-    oneshot
-
-on property:sys.rpi4.boot_mode=recovery
-    start switch_boot_recovery
-
-on property:sys.rpi4.boot_mode=rom
-    start switch_boot_rom
-
-service switch_boot_recovery /system/xbin/switch_boot recovery
-    user root
-    group system
-    disabled
-    oneshot
-
-service switch_boot_rom /system/xbin/switch_boot rom
-    user root
-    group system
-    disabled
-    oneshot
-
-on property:persist.rpi4.gpiod.options=* && property:persist.rpi4.gpiod.lines=* && property:sys.boot_completed=1
-    stop gpiod    
-    start gpiod
-
-service gpiod /system/bin/gpiod ${persist.rpi4.gpiod.options} ${persist.rpi4.gpiod.lines}
-    user root
-    group system
     disabled
     oneshot
