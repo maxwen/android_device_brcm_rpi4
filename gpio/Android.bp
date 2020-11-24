@@ -1,10 +1,13 @@
 cc_binary {
     name: "gpiod",
-    srcs: ["src/gpiod.c", "src/tools-common.c"],
+    srcs: ["src/gpiod.cpp", "src/tools-common.cpp"],
     shared_libs: [
         "libgpiod",
         "liblog",
         "libutils",
     ],
-    cflags: ["-Werror"],
+    cflags: [
+        "-Werror",
+        "-Wno-format-security"
+    ],
 }

@@ -17,6 +17,8 @@
 #include <libgen.h>
 #include <errno.h>
 
+#include <utils/Log.h>
+
 void die(const char *fmt, ...)
 {
 	va_list va;
@@ -37,6 +39,13 @@ void die_perror(const char *fmt, ...)
 	vfprintf(stderr, fmt, va);
 	fprintf(stderr, ": %s\n", strerror(errno));
 	va_end(va);
+
+	exit(EXIT_FAILURE);
+}
+
+void die_logd(const char *fmt, ...)
+{
+	ALOGE(fmt);
 
 	exit(EXIT_FAILURE);
 }
