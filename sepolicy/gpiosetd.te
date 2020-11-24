@@ -1,0 +1,10 @@
+# gpiod service
+type gpiosetd, domain;
+type gpiosetd_exec, exec_type, file_type, system_file_type;
+typeattribute gpiosetd coredomain;
+
+init_daemon_domain(gpiosetd)
+
+allow gpiosetd gpio_dev:chr_file rw_file_perms;
+allow gpiosetd sysfs_gpio:file r_file_perms;
+allow gpiosetd device:dir r_file_perms;

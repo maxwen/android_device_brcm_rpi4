@@ -11,3 +11,17 @@ cc_binary {
         "-Wno-format-security"
     ],
 }
+
+cc_binary {
+    name: "gpiosetd",
+    srcs: ["src/gpiosetd.cpp", "src/tools-common.cpp"],
+    shared_libs: [
+        "libgpiod",
+        "liblog",
+        "libutils",
+    ],
+    cflags: [
+        "-Werror",
+        "-Wno-format-security"
+    ],
+}

@@ -200,7 +200,8 @@ PRODUCT_PACKAGES += \
     gpioinfo \
     gpiomon \
     gpioset \
-    gpiod
+    gpiod \
+    gpiosetd
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/scripts/switch_boot.sh:$(TARGET_COPY_OUT_SYSTEM)/xbin/switch_boot

@@ -37,3 +37,13 @@ service gpiod /system/bin/gpiod ${persist.rpi4.gpiod.options} ${persist.rpi4.gpi
     group system
     disabled
     oneshot
+
+on property:persist.rpi4.gpiosetd.options=* && property:persist.rpi4.gpiosetd.values=* && property:sys.boot_completed=1
+    stop gpiosetd    
+    start gpiosetd
+
+service gpiosetd /system/bin/gpiosetd ${persist.rpi4.gpiosetd.options} ${persist.rpi4.gpiosetd.values}
+    user system
+    group system
+    disabled
+    oneshot

@@ -32,4 +32,5 @@
 
 /system/xbin/switch_boot u:object_r:switch_boot_exec:s0
 /system/bin/gpiod u:object_r:gpiod_exec:s0
+/system/bin/gpiosetd u:object_r:gpiosetd_exec:s0
 /data/gpio(/.*)? u:object_r:gpiod_data_file:s0

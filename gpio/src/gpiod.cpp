@@ -357,10 +357,10 @@ int main(int argc, char **argv)
     else
         event_type = GPIOD_CTXLESS_EVENT_BOTH_EDGES;
 
-    if (argcList < 1)
+    if (argcList - argvIndex < 1)
         die_logd("gpiochip must be specified");
 
-    if (argcList < 2)
+    if (argcList - argvIndex < 2)
         die_logd("at least one GPIO line offset must be specified");
 
     for (i = argvIndex + 1; i < argcList; i++) {
