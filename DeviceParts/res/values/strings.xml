@@ -30,4 +30,5 @@
     <string name="audio_card_headphone_jack">Headphone Jack</string>
     <string name="boot_mode_rom">ROM</string>
     <string name="boot_mode_recovery">Recovery</string>
+    <string name="cpu_governor_title">CPU frequency governor</string>
 </resources>

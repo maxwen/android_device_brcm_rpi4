@@ -29,6 +29,14 @@
         android:persistent="false"
         android:defaultValue="0" />
 
+    <ListPreference
+        android:key="cpu_governor"
+        android:title="@string/cpu_governor_title"
+        android:entries="@array/cpu_governors"
+        android:entryValues="@array/cpu_governors"
+        android:persistent="false"
+        android:defaultValue="ondemand" />
+
     <!--<org.omnirom.omnilib.preference.SecureSettingSwitchPreference
         android:key="sysui_nav_bar_system_keys"
         android:title="@string/tuner_nav_bar_system_keys_title"

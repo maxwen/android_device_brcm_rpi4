@@ -43,15 +43,18 @@ public class DeviceSettings extends PreferenceFragment implements
     private static final String KEY_ROTATION_LOCK = "rotation_lock";
     private static final String KEY_BOOT_MODE = "boot_mode";
     private static final String KEY_AUDIO_CARD = "audio_card";
+    private static final String KEY_CPU_GOVERNOR = "cpu_governor";
 
     private static final String BOOT_MODE_PROPERTY = "sys.rpi4.boot_mode";
     private static final String AUDIO_CARD_PROPERTY = "audio.pcm.card";
     private static final String AUDIO_CARD_OVERRIDE_PROPERTY = "persist.audio.pcm.card";
+    private static final String CPU_GOVERNOR_PROPERTY = "persist.rpi4.cpufreq.governor";
 
     private IWindowManager mWindowManager;
     private ListPreference mRotationLock;
     private ListPreference mBootMode;
     private ListPreference mAudioCard;
+    private ListPreference mCPUGovernor;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -74,6 +77,12 @@ public class DeviceSettings extends PreferenceFragment implements
                 SystemProperties.get(AUDIO_CARD_PROPERTY, ""));
         mAudioCard.setValue(card);
         mAudioCard.setSummary(mAudioCard.getEntry());
+
+        mCPUGovernor = (ListPreference) findPreference(KEY_CPU_GOVERNOR);
+        mCPUGovernor.setOnPreferenceChangeListener(this);
+        String governor = SystemProperties.get(CPU_GOVERNOR_PROPERTY, "ondemand");
+        mCPUGovernor.setValue(governor);
+        mCPUGovernor.setSummary(mCPUGovernor.getEntry());
     }
 
     @Override
@@ -121,6 +130,10 @@ public class DeviceSettings extends PreferenceFragment implements
             String value = (String) newValue;
             SystemProperties.set(AUDIO_CARD_OVERRIDE_PROPERTY, value);
             mAudioCard.setSummary(mAudioCard.getEntries()[Integer.valueOf(value)]);
+        } else if (preference == mCPUGovernor) {
+            String value = (String) newValue;
+            SystemProperties.set(CPU_GOVERNOR_PROPERTY, value);
+            mCPUGovernor.setSummary(value);
         } else if (preference == mBootMode) {
             String value = (String) newValue;
             switchBootMode(value);
