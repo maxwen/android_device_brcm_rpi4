@@ -1,0 +1,96 @@
+Overview:
+
+gpio support is based on libgpiod (version 1.3)
+https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git/
+
+You can test using the tools that are part of the libgpiod package like 
+-gpiodetect
+-gpiofind
+-gpioget
+-gpioinfo
+-gpiomon
+-gpioset
+
+As described e.g. here
+https://microhobby.com.br/blog/2020/02/02/new-linux-kernel-5-5-new-interfaces-in-gpiolib/
+
+Monitor gpio lines and trigger actions:
+
+gpiod is a modified build of gpiomon adapted to run as an android service
+
+Is is located in /system/gin/gpiod and can be configured by two properties
+and a script that defines what shell actions should be executed when gpio lines change
+The service is started automatically if you set the two properties correct
+and also checks if the script is in place else it will do nothing
+or dont even start.
+
+You can monitor messages from the service in logcat with the tag gpiod
+e.g.
+11-28 17:38:53.743   959   959 I gpiod   : event:  RISING EDGE offset: 23 timestamp: [1606581533.731186464]
+11-28 17:38:53.864   959   959 I gpiod   : event: FALLING EDGE offset: 23 timestamp: [1606581533.731535612]
+
+persist.rpi4.gpiod.options
+can be used to set the options for gpiod. To see available options
+simply start gpiod on cmdline with -h
+
+Usage: gpiod [OPTIONS] <chip name/number> <offset 1> <offset 2> ...
+
+Chip name is mandatory and in 99.9% of cases this is gpiochip0
+which is the main gpio port of the raspberry pi
+
+persist.rpi4.gpiod.lines
+Is a list of gpio lines you want to monitor e.g. "3 23"
+
+You can modiy these properties using a local terminal or adb shell
+like
+
+adb shell setprop persist.rpi4.gpiod.options "-d -r gpiochip0"
+adb shell setprop persist.rpi4.gpiod.lines "3 23"
+
+Trigger script
+
+The trigger script is a shell script that gets the following parameters
+# $1 gpio
+# $2 0 rising 1 falling edge
+# $3 timestamp
+
+You can find an exmple template at
+https://github.com/maxwen/android_device_brcm_rpi4/blob/android-11/gpio/scripts/template.sh
+
+#!/system/bin/sh
+# $1 gpio
+# $2 0 rising 1 falling edge
+# $3 timestamp
+# log -t gpiod $*
+
+case $1 in
+    23)
+        if [ $2 -eq 0 ]; then
+            log -t gpiod "23 rising edge" $3
+            # any shell action e.g.
+            am start "org.omnirom.omnijaws/.WeatherActivity"
+            # this will start the weather activity
+        fi
+        ;;
+esac
+
+You must copy yoru version of the trigger script to
+/data/gpio/triggers.sh
+
+To allow writing into /data you MUST use adb root
+then use e.g. adb push <file> /data/gpio/triggers.sh
+
+ATTENTION
+Make sure the file has UNIX file format and not MSDOS
+
+Set gpio lines:
+
+Similiar to gpiod vs gpiomon - gpiosetd is a modified version of gpioset
+suitable to run as service and configurable by two properties
+
+Located in
+/system/gin/gpiosetd
+
+Configured with
+persist.rpi4.gpiosetd.options "-d gpiochip0"
+persist.rpi4.gpiosetd.values "17=1 18=0"
