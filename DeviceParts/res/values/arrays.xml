@@ -49,11 +49,4 @@
         <item>rom</item>
         <item>recovery</item>
     </string-array>
-
-    <string-array name="cpu_governors" translatable="false">
-        <item>ondemand</item>
-        <item>schedutil</item>
-        <item>performance</item>
-        <item>powersave</item>
-    </string-array>
 </resources>

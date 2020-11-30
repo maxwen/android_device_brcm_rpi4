@@ -14,12 +14,35 @@
      limitations under the License.
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="@string/category_display">
+
     <ListPreference
         android:key="rotation_lock"
         android:title="@string/rotation_lock_title"
         android:entries="@array/rotation_lock_entries"
         android:entryValues="@array/rotation_lock_values"
         android:defaultValue="0" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/category_cpu">
+
+    <ListPreference
+        android:key="cpu_governor"
+        android:title="@string/cpu_governor_title"
+        android:persistent="false"
+        android:defaultValue="ondemand" />
+
+    <ListPreference
+        android:key="cpu_max_Freq"
+        android:title="@string/cpu_max_freq_title"
+        android:persistent="false"
+        android:defaultValue="1000000" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/category_system">
 
     <ListPreference
         android:key="audio_card"
@@ -30,25 +53,12 @@
         android:defaultValue="0" />
 
     <ListPreference
-        android:key="cpu_governor"
-        android:title="@string/cpu_governor_title"
-        android:entries="@array/cpu_governors"
-        android:entryValues="@array/cpu_governors"
-        android:persistent="false"
-        android:defaultValue="ondemand" />
-
-    <!--<org.omnirom.omnilib.preference.SecureSettingSwitchPreference
-        android:key="sysui_nav_bar_system_keys"
-        android:title="@string/tuner_nav_bar_system_keys_title"
-        android:summary="@string/tuner_nav_bar_system_keys_summary"
-        android:defaultValue="false" />-->
-
-    <ListPreference
         android:key="boot_mode"
         android:title="@string/boot_mode_title"
         android:entries="@array/boot_mode_entries"
         android:entryValues="@array/boot_mode_values"
         android:persistent="false"
         android:defaultValue="rom" />
+    </PreferenceCategory>
 
 </PreferenceScreen>

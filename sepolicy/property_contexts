@@ -1,0 +1,6 @@
+persist.rpi4.cpufreq.max_freq          u:object_r:rpi4_system_prop:s0 exact string
+persist.rpi4.cpufreq.governor          u:object_r:rpi4_system_prop:s0 exact string
+persist.rpi4.gpiod.lines               u:object_r:rpi4_system_prop:s0 exact string
+persist.rpi4.gpiod.options             u:object_r:rpi4_system_prop:s0 exact string
+persist.rpi4.gpiosetd.values           u:object_r:rpi4_system_prop:s0 exact string
+persist.rpi4.gpiosetd.options          u:object_r:rpi4_system_prop:s0 exact string

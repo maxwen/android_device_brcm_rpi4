@@ -37,6 +37,9 @@ import android.util.Log;
 
 import com.android.internal.view.RotationPolicy;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DeviceSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "DeviceSettings";
@@ -44,17 +47,25 @@ public class DeviceSettings extends PreferenceFragment implements
     private static final String KEY_BOOT_MODE = "boot_mode";
     private static final String KEY_AUDIO_CARD = "audio_card";
     private static final String KEY_CPU_GOVERNOR = "cpu_governor";
+    private static final String KEY_CPU_MAX_FREQ = "cpu_max_Freq";
 
     private static final String BOOT_MODE_PROPERTY = "sys.rpi4.boot_mode";
     private static final String AUDIO_CARD_PROPERTY = "audio.pcm.card";
     private static final String AUDIO_CARD_OVERRIDE_PROPERTY = "persist.audio.pcm.card";
     private static final String CPU_GOVERNOR_PROPERTY = "persist.rpi4.cpufreq.governor";
+    private static final String CPU_MAX_FREQ_PROPERTY = "persist.rpi4.cpufreq.max_freq";
+
+    private static final String CPU_SYSFS_GOVERNORS = "/sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors";
+    private static final String CPU_SYSFS_GOVERNOR = "/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor";
+    private static final String CPU_SYSFS_FREQUENCIES = "/sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies";
+    private static final String CPU_SYSFS_MAX_FREQ = "/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq";
 
     private IWindowManager mWindowManager;
     private ListPreference mRotationLock;
     private ListPreference mBootMode;
     private ListPreference mAudioCard;
     private ListPreference mCPUGovernor;
+    private ListPreference mCPUMaxFreq;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -80,9 +91,21 @@ public class DeviceSettings extends PreferenceFragment implements
 
         mCPUGovernor = (ListPreference) findPreference(KEY_CPU_GOVERNOR);
         mCPUGovernor.setOnPreferenceChangeListener(this);
-        String governor = SystemProperties.get(CPU_GOVERNOR_PROPERTY, "ondemand");
-        mCPUGovernor.setValue(governor);
-        mCPUGovernor.setSummary(mCPUGovernor.getEntry());
+        setupGovernors();
+        String governor = Utils.readLine(CPU_SYSFS_GOVERNOR);
+        if (governor != null) {
+            mCPUGovernor.setValue(governor);
+            mCPUGovernor.setSummary(mCPUGovernor.getEntry());
+        }
+
+        mCPUMaxFreq = (ListPreference) findPreference(KEY_CPU_MAX_FREQ);
+        mCPUMaxFreq.setOnPreferenceChangeListener(this);
+        setupMaxFreq();
+        String maxFreq = Utils.readLine(CPU_SYSFS_MAX_FREQ);
+        if (maxFreq != null) {
+            mCPUMaxFreq.setValue(maxFreq);
+            mCPUMaxFreq.setSummary(mCPUMaxFreq.getEntry());
+        }
     }
 
     @Override
@@ -134,6 +157,10 @@ public class DeviceSettings extends PreferenceFragment implements
             String value = (String) newValue;
             SystemProperties.set(CPU_GOVERNOR_PROPERTY, value);
             mCPUGovernor.setSummary(value);
+        } else if (preference == mCPUMaxFreq) {
+            String value = (String) newValue;
+            SystemProperties.set(CPU_MAX_FREQ_PROPERTY, value);
+            mCPUMaxFreq.setSummary(value);
         } else if (preference == mBootMode) {
             String value = (String) newValue;
             switchBootMode(value);
@@ -148,5 +175,27 @@ public class DeviceSettings extends PreferenceFragment implements
 
     private String getBootMode() {
         return SystemProperties.get(BOOT_MODE_PROPERTY);
+    }
+
+    private void setupGovernors() {
+        List<String> governors = Utils.readLineAsArray(CPU_SYSFS_GOVERNORS);
+        if (governors != null) {
+            String[] g = governors.toArray(new String[governors.size()]);
+            mCPUGovernor.setEntryValues(g);
+            mCPUGovernor.setEntries(g);
+        } else {
+            mCPUGovernor.setEnabled(false);
+        }
+    }
+
+    private void setupMaxFreq() {
+        List<String> frequencies = Utils.readLineAsArray(CPU_SYSFS_FREQUENCIES);
+        if (frequencies != null) {
+            String[] g = frequencies.toArray(new String[frequencies.size()]);
+            mCPUMaxFreq.setEntryValues(g);
+            mCPUMaxFreq.setEntries(g);
+        } else {
+            mCPUMaxFreq.setEnabled(false);
+        }
     }
 }

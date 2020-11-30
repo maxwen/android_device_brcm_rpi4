@@ -30,5 +30,10 @@
     <string name="audio_card_headphone_jack">Headphone Jack</string>
     <string name="boot_mode_rom">ROM</string>
     <string name="boot_mode_recovery">Recovery</string>
-    <string name="cpu_governor_title">CPU frequency governor</string>
+    <string name="cpu_governor_title">Governor</string>
+    <string name="cpu_max_freq_title">Maximum frequency</string>
+    <string name="category_cpu">CPU scaling</string>
+    <string name="category_display">Display</string>
+    <string name="category_system">System</string>
+
 </resources>

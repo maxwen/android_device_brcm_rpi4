@@ -1,2 +1,3 @@
 allow init kernel:system module_request;
 allow init tmpfs:lnk_file create;
+allow init sysfs_devices_system_cpu:file rw_file_perms;
