@@ -28,4 +28,6 @@
     <!-- 2dp -->
     <dimen name="qs_footer_margin">10dp</dimen>
 
+    <!-- 12dp -->
+    <dimen name="cpu_info_text_height">14dp</dimen>
 </resources>
