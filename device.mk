@@ -89,6 +89,10 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
     android.hardware.health.storage@1.0-service
 
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.0-impl \
+    android.hardware.power@1.0-service
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.host.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.host.xml \
@@ -167,7 +171,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     audio.primary.rpi4 \
     memtrack.rpi4 \
-    gps.rpi4
+    gps.rpi4 \
+    power.rpi4
 
 #PRODUCT_PACKAGES += \
     gatekeeper.rpi4 \

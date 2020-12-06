@@ -7,4 +7,5 @@ genfscon sysfs /devices/platform/soc/fe200000.gpio/gpiochip0/dev u:object_r:sysf
 genfscon sysfs /devices/platform/soc/fe200000.gpio/gpiochip1/dev u:object_r:sysfs_gpio:s0
 genfscon sysfs /devices/platform/soc/soc:firmware/soc:firmware:gpio/gpiochip0/dev u:object_r:sysfs_gpio:s0
 genfscon sysfs /devices/platform/soc/soc:firmware/soc:firmware:gpio/gpiochip1/dev u:object_r:sysfs_gpio:s0
+genfscon sysfs /devices/virtual/thermal/thermal_zone0/temp u:object_r:sysfs_thermal:s0
 

@@ -1,0 +1,1 @@
+allow hal_power_default sysfs_devices_system_cpu:file rw_file_perms;
