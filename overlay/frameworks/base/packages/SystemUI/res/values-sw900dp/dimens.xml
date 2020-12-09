@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
- * Copyright (c) 2012, The Android Open Source Project
+ * Copyright (c) 2016, The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,9 @@
 */
 -->
 <resources>
-    <dimen name="qs_tile_margin_top">8dp</dimen>
-    <dimen name="qs_tile_margin_vertical">16dp</dimen>
+
+    <dimen name="navigation_side_padding">36dp</dimen>
     <dimen name="navigation_key_width">128dp</dimen>
+    <dimen name="navigation_extra_key_width">48dip</dimen>
+
 </resources>
