@@ -87,6 +87,20 @@ static void set_audio_card_property() {
     }
 }
 
+// debug.drm.mode.force=1280x800
+static void set_drm_mode_property() {
+    std::string drmModeFile = android::base::GetProperty("debug.drm.mode.force", "");
+    // security reset - if available always set value from /system/build.prop
+    if (!drmModeFile.empty()) {
+        property_override("persist.debug.drm.mode.force", "");
+    } else {
+        std::string drmMode = android::base::GetProperty("persist.debug.drm.mode.force", "");
+        if (!drmMode.empty()) {
+            property_override("debug.drm.mode.force", drmMode);
+        }
+    }
+}
+
 void vendor_load_properties()
 {
     // is done from kernel now
@@ -96,6 +110,8 @@ void vendor_load_properties()
     set_revision_property();
 
     set_audio_card_property();
+
+    set_drm_mode_property();
 }
 
 void vendor_create_device_symlinks(const Uevent& uevent, std::vector<std::string>& links)

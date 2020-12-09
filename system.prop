@@ -1,4 +1,6 @@
-# Display
+# Change for a different screen resolutions
+# can be set during ruintime by using persist.debug.drm.mode.force
+# but value here will overrule if set
 #debug.drm.mode.force=1280x800
 
 #gralloc.drm.device=/dev/dri/card0
