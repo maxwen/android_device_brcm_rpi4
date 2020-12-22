@@ -13,7 +13,6 @@
    limitations under the License.
 -->
 <resources>
-    <bool name="profile_supported_hs_hfp">false</bool>
-
-    <bool name="enable_phone_policy">false</bool>
+    <bool name="profile_supported_avrcp_controller">true</bool>
+    <bool name="profile_supported_sap">true</bool>
 </resources>
