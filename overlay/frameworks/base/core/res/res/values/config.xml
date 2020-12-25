@@ -200,4 +200,8 @@
         <item>logout</item>
         <item>screenshot</item>
     </string-array>
+
+    <bool name="config_use16BitTaskSnapshotPixelFormat">true</bool>
+    <item name="config_lowResTaskSnapshotScale" format="float" type="dimen">0.3</item>
+
 </resources>
