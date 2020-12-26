@@ -23,7 +23,20 @@ LOCAL_MODULE_CLASS := DATA
 LOCAL_SRC_FILES := $(LOCAL_MODULE)
 
 LOCAL_MODULE_PATH := \
-	$(TARGET_OUT_VENDOR)/etc/firmware/bcm
+	$(TARGET_OUT_VENDOR)/etc/firmware/brcm/
+
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_TAGS := optional
+
+LOCAL_MODULE := BCM4345C5.hcd
+LOCAL_MODULE_CLASS := DATA
+LOCAL_SRC_FILES := $(LOCAL_MODULE)
+
+LOCAL_MODULE_PATH := \
+	$(TARGET_OUT_VENDOR)/etc/firmware/brcm/
 
 include $(BUILD_PREBUILT)
 
@@ -33,13 +46,14 @@ LOCAL_MODULE := btuart
 LOCAL_PROPRIETARY_MODULE := true
 
 LOCAL_REQUIRED_MODULES := \
-	BCM4345C0.hcd
+	BCM4345C0.hcd \
+	BCM4345C5.hcd
 
 LOCAL_SRC_FILES := \
 	hciattach_rpi4.c
 
 LOCAL_CFLAGS := \
-	-DFIRMWARE_DIR=\"/vendor/etc/firmware/bcm\"
+	-DFIRMWARE_DIR=\"/vendor/etc/firmware/brcm/\"
 
 LOCAL_SHARED_LIBRARIES := \
 	libcutils liblog
