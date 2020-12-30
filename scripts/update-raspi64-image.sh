@@ -110,8 +110,8 @@ sudo dd if=$IN_IMAGE_DIR/system.img of=$SD_CARD_DEVICE"2" bs=1M
 echo write vendor.img to $SD_CARD_DEVICE"3"
 sudo dd if=$IN_IMAGE_DIR/vendor.img of=$SD_CARD_DEVICE"3" bs=1M
 
-#echo "enable project quota"
-#sudo tune2fs -O project,quota $SD_CARD_DEVICE"4"
+echo "enable project quota"
+sudo tune2fs -O project,quota $SD_CARD_DEVICE"4"
 
 sudo umount /mnt/tmp
 sudo rm -fr /mnt/tmp

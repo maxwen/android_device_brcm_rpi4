@@ -109,8 +109,8 @@ sudo mkfs.vfat /dev/mapper/loop0p1 -n boot
 sudo mkfs.ext4 /dev/mapper/loop0p2 -L system
 sudo mkfs.ext4 /dev/mapper/loop0p3 -L vendor
 sudo mkfs.ext4 /dev/mapper/loop0p4 -L userdata
-#echo "enable project quota"
-#sudo tune2fs -O project,quota /dev/mapper/loop0p4
+echo "enable project quota"
+sudo tune2fs -O project,quota /dev/mapper/loop0p4
 
 echo "write system.img"
 sudo dd if="$IN_IMAGE_DIR/system.img" of=/dev/mapper/loop0p2 bs=1M
