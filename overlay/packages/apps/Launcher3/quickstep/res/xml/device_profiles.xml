@@ -54,7 +54,7 @@
         launcher:numHotseatIcons="6"
         launcher:numAllAppsColumns="6"
         launcher:dbFile="launcher_6_by_6.db"
-        launcher:defaultLayoutId="@xml/default_workspace_6x6" >
+        launcher:defaultLayoutId="@xml/default_workspace_5x5" >
 
         <display-option
             launcher:name="1280x800"
@@ -82,7 +82,7 @@
         launcher:numHotseatIcons="5"
         launcher:numAllAppsColumns="7"
         launcher:dbFile="launcher_7_by_7.db"
-        launcher:defaultLayoutId="@xml/default_workspace_6x6" >
+        launcher:defaultLayoutId="@xml/default_workspace_5x5" >
 
         <display-option
             launcher:name="1280x800"
@@ -110,7 +110,7 @@
         launcher:numHotseatIcons="5"
         launcher:numAllAppsColumns="8"
         launcher:dbFile="launcher_8_by_8.db"
-        launcher:defaultLayoutId="@xml/default_workspace_6x6" >
+        launcher:defaultLayoutId="@xml/default_workspace_5x5" >
 
         <display-option
             launcher:name="1280x800"
@@ -138,7 +138,7 @@
         launcher:numHotseatIcons="7"
         launcher:numAllAppsColumns="7"
         launcher:dbFile="launcher_7_by_5.db"
-        launcher:defaultLayoutId="@xml/default_workspace_6x6" >
+        launcher:defaultLayoutId="@xml/default_workspace_5x5" >
 
         <display-option
             launcher:name="1280x800"
@@ -166,7 +166,7 @@
         launcher:numHotseatIcons="8"
         launcher:numAllAppsColumns="8"
         launcher:dbFile="launcher_8_by_5.db"
-        launcher:defaultLayoutId="@xml/default_workspace_6x6" >
+        launcher:defaultLayoutId="@xml/default_workspace_5x5" >
 
         <display-option
             launcher:name="1280x800"
@@ -194,7 +194,7 @@
         launcher:numHotseatIcons="9"
         launcher:numAllAppsColumns="9"
         launcher:dbFile="launcher_9_by_5.db"
-        launcher:defaultLayoutId="@xml/default_workspace_6x6" >
+        launcher:defaultLayoutId="@xml/default_workspace_5x5" >
 
         <display-option
             launcher:name="1280x800"
