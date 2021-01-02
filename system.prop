@@ -25,6 +25,7 @@ persist.sys.usb.config=mtp
 
 # Wifi
 wifi.interface=wlan0
+ro.boot.wificountrycode=00
 
 # R
 ro.kernel.ebpf.supported=true
