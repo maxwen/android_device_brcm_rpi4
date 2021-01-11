@@ -17,6 +17,6 @@
 -->
 <resources>
     <dimen name="qs_tile_margin_top">8dp</dimen>
-    <dimen name="qs_tile_margin_vertical">16dp</dimen>
+    <dimen name="qs_tile_margin_vertical">10dp</dimen>
     <dimen name="navigation_key_width">128dp</dimen>
 </resources>

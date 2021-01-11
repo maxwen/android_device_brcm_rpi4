@@ -16,9 +16,6 @@
 */
 -->
 <resources>
-    <!-- 12sp -->
-    <dimen name="qs_tile_text_size">13sp</dimen>
-    
     <!-- 0dp -->
     <dimen name="status_bar_padding_start">10dp</dimen>
 
@@ -30,4 +27,7 @@
 
     <!-- 12dp -->
     <dimen name="cpu_info_text_height">14dp</dimen>
+    
+    <!-- 32dp -->
+    <dimen name="qs_tile_margin_top">8dp</dimen>
 </resources>
