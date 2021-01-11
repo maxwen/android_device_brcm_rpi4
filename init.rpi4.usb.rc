@@ -10,6 +10,7 @@ on boot
     write /config/usb_gadget/g1/strings/0x409/product "Pi 4"
     mkdir /config/usb_gadget/g1/functions/ffs.adb
     mkdir /config/usb_gadget/g1/functions/mtp.gs0
+    mkdir /config/usb_gadget/g1/functions/accessory.gs2
     mkdir /config/usb_gadget/g1/configs/b.1 0770 shell shell
     mkdir /config/usb_gadget/g1/configs/b.1/strings/0x409 0770 shell shell
     write /config/usb_gadget/g1/configs/b.1/MaxPower 500
@@ -28,3 +29,11 @@ on property:sys.usb.config=mtp && property:sys.usb.configfs=1
 on property:sys.usb.config=adb && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idProduct 0x4ee7
     #setprop service.adb.tcp.port 5555
+
+on property:sys.usb.config=accessory && property:sys.usb.configfs=1
+    write /config/usb_gadget/g1/idVendor 0x18d1
+    write /config/usb_gadget/g1/idProduct 0x2d00
+
+on property:sys.usb.config=accessory,adb && property:sys.usb.configfs=1
+    write /config/usb_gadget/g1/idVendor 0x18d1
+    write /config/usb_gadget/g1/idProduct 0x2d01
