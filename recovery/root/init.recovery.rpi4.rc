@@ -64,9 +64,6 @@ service keymaster-3-0 /sbin/android.hardware.keymaster@3.0-service
     disabled
     seclabel u:r:recovery:s0
 
-on fs
-    install_keyring
-
 on init
     start servicemanager
     start hwservicemanager

@@ -6,16 +6,18 @@
 
 # these partitions are defined by default from dt using overlay so just keeping here for reference or if ever needed
 
-/dev/block/mmcblk0p1    /boot             vfat      defaults
-#/dev/block/sda1         /boot             vfat      defaults
+/dev/block/mmcblk0p2    /system             ext4      ro,barrier=1                                          wait,first_stage_mount
+#/dev/block/sda2         /system             ext4      ro,barrier=1                                          wait,first_stage_mount
 
-/dev/block/mmcblk0p2    /system             ext4      defaults
-#/dev/block/sda2         /system             ext4      defaults
+/dev/block/mmcblk0p3    /vendor             ext4      ro,barrier=1                                          wait,first_stage_mount
+#/dev/block/sda3         /vendor             ext4      ro,barrier=1                                          wait,first_stage_mount
 
-/dev/block/mmcblk0p3    /vendor             ext4     defaults
-#/dev/block/sda3         /vendor             ext4      defaults
+# TODO fileencryption=aes-256-xts
+#/dev/block/mmcblk0p4    /data               ext4      noatime,nosuid,nodev,nomblk_io_submit latemount,wait,check,quota
+#/dev/block/sda4         /data               ext4      noatime,nosuid,nodev,nomblk_io_submit latemount,wait,check,quota
 
-/dev/block/mmcblk0p4    /data               ext4      noatime,nosuid,nodev,barrier=1,noauto_da_alloc fileencryption=aes-256-xts
-#/dev/block/sda4         /data               ext4      noatime,nosuid,nodev,barrier=1,noauto_da_alloc fileencryption=aes-256-xts
+# TODO fileencryption=aes-256-xts
+# relies on the userdata parition beeing number 4 or named sda4 or mmcblk0p4
+#/dev/block/by-name/userdata /data               ext4      noatime,nosuid,nodev,nomblk_io_submit latemount,wait,check,quota
 
-/dev/block/sda1         /usb_otg               auto      defaults
+#/devices/platform/scb/*.pcie/*/*/*/usb*    auto     auto    defaults                                        voldmanaged=usb:auto

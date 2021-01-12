@@ -217,7 +217,8 @@ PRODUCT_SOONG_NAMESPACES += packages/apps/Bluetooth
 
 # recovery
 # enable when building recoveryimage
-#PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root,recovery/root)
+PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root,recovery/root)
+PRODUCT_COPY_FILES += $(DEVICE_PATH)/recovery/recovery.fstab:recovery/root/system/etc/recovery.fstab
 
 #PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/scripts/switch_boot_recovery.sh:recovery/root/sbin/switch_boot_recovery \
