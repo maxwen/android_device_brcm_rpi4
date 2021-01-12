@@ -7,14 +7,12 @@ Refer to https://github.com/omnirom/android
 
 $ repo init -u git://github.com/omnirom/android.git -b android-11
 
-copy https://github.com/maxwen/android_device_brcm_rpi4/blob/android-11/repo/local_manifest.xml .repo/local_manifests/
-
-If you are not building based on omni to use roomservice check local_manifest_full.xml
-
 If you want to use the contents of omni-private.xml please check
 https://github.com/omnirom/android/README and head over to send us a short
 email notice. Otherwise you can simple remove the include of that xml
 file and build without
+
+If you want to build with microG add the contents of <device>/repo/local_manifest.xml
 
 $ repo sync
 
@@ -24,10 +22,9 @@ Refer to http://source.android.com/source/building.html
 
 # prepare environment
 
-$ export ROM_BUILDTYPE=MICROG
+$ export ROM_BUILDTYPE=<MICROG|WEEKLY>
 $ export TEMPORARY_DISABLE_PATH_RESTRICTIONS=true
 $ export ALLOW_MISSING_DEPENDENCIES=true
-$ export PRODUCT_EXCLUDE_EXTRA_PACKAGES=true
 $ source build/envsetup.sh
 $ lunch omni_rpi4-userdebug
 

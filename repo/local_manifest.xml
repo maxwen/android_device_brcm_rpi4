@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-    <project path="device/brcm/rpi4" name="maxwen/android_device_brcm_rpi4" remote="github" revision="android-11"/>
-
     <project path="vendor/microg" name="android_prebuilts_prebuiltapks" remote="omnirom" revision="android-11" />
 </manifest>

@@ -1,31 +1,31 @@
 [
   {
     "remote": "github",
-    "repository": "maxwen/android_kernel_brcm_arpi",
+    "repository": "android_kernel_brcm_arpi",
     "target_path": "kernel/brcm/arpi",
-    "revision": "android-11-5.4-lts"
+    "revision": "android-11"
   },
   {
     "remote": "github",
-    "repository": "maxwen/android_hardware_arpi",
+    "repository": "android_hardware_arpi",
     "target_path": "hardware/arpi",
     "revision": "android-11"
   },
   {
     "remote": "github",
-    "repository": "maxwen/proprietary_vendor_brcm",
+    "repository": "proprietary_vendor_brcm",
     "target_path": "vendor/brcm",
     "revision": "android-11"
   },
   {
     "remote": "github",
-    "repository": "maxwen/android_external_gbm_gralloc",
+    "repository": "android_external_gbm_gralloc",
     "target_path": "external/gbm_gralloc",
     "revision": "android-11"
   },
   {
     "remote": "github",
-    "repository": "maxwen/android_external_libgpiod",
+    "repository": "android_external_libgpiod",
     "target_path": "external/libgpiod",
     "revision": "android-11"
   },
